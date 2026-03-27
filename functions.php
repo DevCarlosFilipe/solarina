@@ -62,6 +62,15 @@ function solarina_enqueue_assets() {
         true
     );
 
+
+    // HERO CSS
+    wp_enqueue_style(
+        'solarina-hero',
+        get_template_directory_uri() . '/assets/css/hero.css',
+        ['solarina-style'],
+        '1.0'
+    );
+
 }
 
 add_action('wp_enqueue_scripts', 'solarina_enqueue_assets');

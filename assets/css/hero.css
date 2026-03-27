@@ -14,3 +14,17 @@
     height: 10px;
     border-radius: 50%;
 }
+
+.hero-style>h1 {    
+    font-family: cursive;
+    color: #dc8132;
+}
+.hero-style>p {    
+    font-family: cursive;
+    color: #dc8132;
+}
+
+.hero-style>a {    
+    font-family: cursive;
+    color: #dc8132;
+}

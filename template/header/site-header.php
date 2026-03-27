@@ -25,8 +25,8 @@
 
         <!-- ÍCONES -->
         <div class="d-flex gap-3">
+            <i class="bi bi-cart3 text-white"></i>
             <i class="bi bi-search text-white"></i>
-            <i class="bi bi-bag text-white"></i>
         </div>
 
     </div>

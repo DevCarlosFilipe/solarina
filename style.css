@@ -36,8 +36,3 @@ body {
 #main-header.scrolled .nav-link {
     color: #333 !important;
 }
-
-/* ESPAÇAMENTO PARA COMPENSAR HEADER FIXO */
-body {
-    padding-top: 70px; /* Ajuste conforme necessário */
-}
