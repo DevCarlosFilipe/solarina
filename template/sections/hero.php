@@ -23,7 +23,10 @@
             ?>
 
                 <div class="carousel-item <?php echo $i === 1 ? 'active' : ''; ?>"
-                    style="height: 100vh; background: url('<?php echo $image; ?>') center/cover no-repeat;">
+                    style="
+                        height: 100vh; 
+                        background: url('<?php echo $image; ?>') center/cover no-repeat fixed;
+                    ">
 
                     <div class="overlay d-flex align-items-center h-100">
                         <div class="container h-100 d-flex align-items-center">

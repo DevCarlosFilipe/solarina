@@ -1,0 +1,16 @@
+.error-404 {
+    background: #f5efe6;
+}
+
+.error-404 h1 {
+    font-size: 120px;
+    font-family: 'Playfair Display', serif;
+}
+
+.error-404 h2 {
+    margin-top: 20px;
+}
+
+.error-404 p {
+    color: #666;
+}

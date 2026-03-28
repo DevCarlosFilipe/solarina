@@ -25,7 +25,17 @@
 
         <!-- ÍCONES -->
         <div class="d-flex gap-3">
-            <i class="bi bi-cart3 text-white"></i>
+            <?php if (class_exists('WooCommerce')) : ?>
+
+                <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
+                    <i class="bi bi-cart3"></i>
+
+                    <span class="cart-count">
+                        <?php echo WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?>
+                    </span>
+                </a>
+
+            <?php endif; ?>
             <i class="bi bi-search text-white"></i>
         </div>
 

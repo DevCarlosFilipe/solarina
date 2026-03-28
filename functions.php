@@ -4,19 +4,65 @@
 function solarina_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
-    add_theme_support('html5', [
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-        'style',
-        'script'
-    ]);
+
+    // WooCommerce
+    add_theme_support('woocommerce');
+
+    // Galeria de produtos do WooCommerce
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
 }
 
 add_action('after_setup_theme', 'solarina_setup');
 
+wp_enqueue_style(
+    'solarina-error',
+    get_template_directory_uri() . '/assets/css/error.css',
+    ['solarina-style'],
+    '1.0'
+);
+
+function solarina_capture_errors() {
+
+    if (!is_admin()) {
+
+        $error = error_get_last();
+
+        if ($error !== NULL) {
+
+            set_transient('solarina_last_error', print_r($error, true), 60);
+
+            wp_redirect(home_url('/erro'));
+            exit;
+        }
+    }
+}
+
+add_action('shutdown', 'solarina_capture_errors');
+
+function solarina_error_page() {
+    return get_template_directory() . '/error.php';
+}
+
+function solarina_rewrite_error() {
+    add_rewrite_rule('^erro/?$', 'index.php?solarina_error=1', 'top');
+}
+add_action('init', 'solarina_rewrite_error');
+
+function solarina_query_vars($vars) {
+    $vars[] = 'solarina_error';
+    return $vars;
+}
+add_filter('query_vars', 'solarina_query_vars');
+
+function solarina_template_redirect() {
+    if (get_query_var('solarina_error')) {
+        include solarina_error_page();
+        exit;
+    }
+}
+add_action('template_redirect', 'solarina_template_redirect');
 
 // Enfileirar estilos e scripts
 function solarina_enqueue_assets() {
@@ -143,3 +189,88 @@ function solarina_customize_register($wp_customize) {
 }
 
 add_action('customize_register', 'solarina_customize_register');
+
+wp_enqueue_style(
+    'solarina-products',
+    get_template_directory_uri() . '/assets/css/products.css',
+    ['solarina-style'],
+    '1.0'
+);
+
+// class tgm plugin activation (recomendo usar pra garantir que o cliente instale o WooCommerce)
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+add_action('tgmpa_register', 'solarina_register_plugins');
+
+function solarina_register_plugins() {
+
+    $plugins = [
+        [
+            'name' => 'WooCommerce',
+            'slug' => 'woocommerce',
+            'required' => true,
+        ],
+    ];
+
+    $config = [
+        'id' => 'solarina',
+        'menu' => 'solarina-install-plugins',
+        'has_notices' => true,
+    ];
+
+    tgmpa($plugins, $config);
+}
+
+// WooCommerce
+function solarina_admin_notice_missing_woocommerce() {
+
+    if (!class_exists('WooCommerce')) {
+
+        echo '<div class="notice notice-warning is-dismissible">';
+        echo '<p><strong>Solarina:</strong> Para funcionamento completo do tema, instale e ative o plugin WooCommerce.</p>';
+        echo '</div>';
+
+    }
+
+}
+
+add_action('admin_notices', 'solarina_admin_notice_missing_woocommerce');
+
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+function solarina_wrapper_start() {
+    echo '<div class="container py-5">';
+}
+
+function solarina_wrapper_end() {
+    echo '</div>';
+}
+
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'solarina_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'solarina_wrapper_end', 10);
+
+function solarina_loop_columns() {
+    return 3; // 3 produtos por linha
+}
+add_filter('loop_shop_columns', 'solarina_loop_columns');
+
+add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
+
+    ob_start();
+    ?>
+    <span class="cart-count">
+        <?php echo WC()->cart->get_cart_contents_count(); ?>
+    </span>
+    <?php
+    $fragments['.cart-count'] = ob_get_clean();
+
+    return $fragments;
+});
+
+// Remove breadcrumb
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+
+// Remove sidebar
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
