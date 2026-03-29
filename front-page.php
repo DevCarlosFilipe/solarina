@@ -4,6 +4,7 @@
 
     <?php get_template_part('template/sections/hero'); ?>
     <?php get_template_part('template/sections/featured', 'products'); ?>
+    <?php get_template_part('template/sections/categories'); ?>
 
 </main>
 

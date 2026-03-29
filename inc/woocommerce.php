@@ -50,3 +50,23 @@ function solarina_admin_notice_missing_woocommerce() {
     }
 }
 add_action('admin_notices', 'solarina_admin_notice_missing_woocommerce');
+
+add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
+
+    ob_start();
+    ?>
+    <span class="cart-count">
+        <?php 
+        $count = WC()->cart->get_cart_contents_count();
+        if ($count > 0) {
+            echo $count > 9 ? '+9' : $count;
+        }
+        ?>
+    </span>
+    <?php
+
+    $fragments['.cart-count'] = ob_get_clean();
+
+    return $fragments;
+
+});

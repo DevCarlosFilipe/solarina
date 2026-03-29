@@ -69,3 +69,19 @@ function solarina_enqueue_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'solarina_enqueue_assets');
+
+wp_enqueue_script(
+    'solarina-carousel',
+    get_template_directory_uri() . '/assets/js/carousel.js',
+    [],
+    '1.0',
+    true
+);
+
+wp_enqueue_script(
+    'solarina-header',
+    get_template_directory_uri() . '/assets/js/header.js',
+    [],
+    '1.0',
+    true
+);

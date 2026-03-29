@@ -1,25 +1,20 @@
-<div class="product-card">
+<?php global $product; ?>
 
-    <div class="card border-0">
+<div class="product-card text-center">
 
-        <!-- Imagem -->
-        <div class="product-image">
-            <img src="https://via.placeholder.com/500x600" class="img-fluid" alt="Produto">
-        </div>
+    <a href="<?php the_permalink(); ?>" class="product-image d-block">
+        <?php echo woocommerce_get_product_thumbnail(); ?>
+    </a>
 
-        <!-- Conteúdo -->
-        <div class="card-body text-center">
+    <h5 class="mt-3"><?php the_title(); ?></h5>
 
-            <h5 class="product-title">Nome do Produto</h5>
+    <p class="product-price">
+        <?php echo $product->get_price_html(); ?>
+    </p>
 
-            <p class="product-price">R$ 129,90</p>
-
-            <a href="#" class="btn btn-dark btn-sm">
-                Ver produto
-            </a>
-
-        </div>
-
-    </div>
+    <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" 
+       class="btn btn-primary btn-sm">
+        Comprar
+    </a>
 
 </div>

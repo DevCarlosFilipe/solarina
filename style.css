@@ -1,9 +1,9 @@
 /*
 Theme Name: Solarina
-Theme URI: http://localhost
+Theme URI: https://github.com/DevCarlosFilipe/solarina
 Author: Carlos Filipe
-Author URI: http://localhost
-Description: Tema custom Solarina
+Author URI: https://github.com/DevCarlosFilipe
+Description: Tema custom Solarina especialmente modificado para lojas de roupas. Desenvolvido para o site solarinacroche.com
 Version: 1.0
 License: GPL2
 Text Domain: solarina
@@ -35,4 +35,33 @@ body {
 
 #main-header.scrolled .nav-link {
     color: #333 !important;
+}
+
+.cart-icon {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.4rem;
+}
+
+/* Remove azul de link */
+.cart-icon:hover {
+    color: #000;
+}
+
+/* Badge */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    border-radius: 50%;
+    display: none;
+}
+
+/* Mostrar apenas se tiver conteúdo */
+.cart-count:not(:empty) {
+    display: inline-block;
 }

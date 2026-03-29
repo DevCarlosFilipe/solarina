@@ -27,12 +27,21 @@
         <div class="d-flex gap-3">
             <?php if (class_exists('WooCommerce')) : ?>
 
-                <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
+                <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon position-relative">
+
                     <i class="bi bi-cart3"></i>
 
                     <span class="cart-count">
-                        <?php echo WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?>
+                        <?php
+                        if (WC()->cart) {
+                            $count = WC()->cart->get_cart_contents_count();
+                            if ($count > 0) {
+                                echo $count > 9 ? '+9' : $count;
+                            }
+                        }
+                        ?>
                     </span>
+
                 </a>
 
             <?php endif; ?>
