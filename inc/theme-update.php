@@ -1,0 +1,11 @@
+<?php
+
+require get_template_directory() . '/inc/theme-update-checker/theme-update-checker.php';
+
+$updateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/DevCarlosFilipe/solarina',
+    __FILE__,
+    'solarina'
+);
+
+$updateChecker->setBranch('main');

@@ -17,3 +17,6 @@ require_once get_template_directory() . '/inc/error-handler.php';
 
 // Plugins recomendados (TGM)
 require_once get_template_directory() . '/inc/tgm.php';
+
+// Atualização automática do tema
+require_once get_template_directory() . '/inc/theme-update.php';
