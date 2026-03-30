@@ -24,12 +24,12 @@
         </nav>
 
         <!-- ÍCONES -->
-        <div class="d-flex gap-3">
+        <div class="font-icon-menu d-flex gap-3 align-items-center">
             <?php if (class_exists('WooCommerce')) : ?>
 
                 <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon position-relative">
 
-                    <i class="bi bi-cart3"></i>
+                    <i class="bi bi-cart3 text-white"></i>
 
                     <span class="cart-count">
                         <?php

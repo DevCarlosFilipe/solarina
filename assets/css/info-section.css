@@ -1,0 +1,40 @@
+.info-section {
+  padding: 60px 20px;
+  background: linear-gradient(
+    to bottom,
+    #e6d3b3,
+    #d2b48c
+  );
+  text-align: center;
+  position: relative;
+}
+
+.info-text {
+  font-size: 28px;
+  color: #6b4f3b;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+.info-section::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #6b4f3b;
+  margin: 20px auto 0;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .info-section {
+    padding: 40px 20px;
+  }
+
+  .info-text {
+    font-size: 22px;
+  }
+}

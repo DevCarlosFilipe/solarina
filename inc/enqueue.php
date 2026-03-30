@@ -1,6 +1,7 @@
 <?php
 
-function solarina_enqueue_assets() {
+function solarina_enqueue_assets()
+{
 
     // Bootstrap CSS
     wp_enqueue_style(
@@ -84,4 +85,20 @@ wp_enqueue_script(
     [],
     '1.0',
     true
+);
+
+wp_enqueue_style(
+    'categories-css', 
+    get_template_directory_uri() . '/assets/css/categories.css'
+);
+
+function carregar_fontes() {
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap', false);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Courgette&display=swap', false);
+}
+add_action('wp_enqueue_scripts', 'carregar_fontes');
+
+wp_enqueue_style(
+    'solarina-info-section',
+    get_template_directory_uri() . '/assets/css/info-section.css'
 );

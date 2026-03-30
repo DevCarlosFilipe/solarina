@@ -9,7 +9,7 @@
 
         <!-- Título -->
         <div class="text-center mb-5">
-            <h2>Destaques da Coleção</h2>
+            <h2 class="session-title">Destaques da Coleção</h2>
             <p>Peças selecionadas para você</p>
         </div>
 

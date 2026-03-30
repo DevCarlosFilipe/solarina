@@ -1,11 +1,27 @@
-<section class="home-categories py-5">
-    <div class="container">
+<section class="categorias">
+  <div class="categorias-grid">
 
-        <div class="text-center mb-5">
-            <h2>Categorias</h2>
-        </div>
+    <?php
+    $args = array(
+        'taxonomy'   => 'product_cat',
+        'hide_empty' => true,
+    );
 
-        <?php echo do_shortcode('[product_categories number="6" columns="3"]'); ?>
+    $categorias = get_terms($args);
 
-    </div>
+    foreach ($categorias as $categoria) {
+
+        $thumbnail_id = get_term_meta($categoria->term_id, 'thumbnail_id', true);
+        $imagem = wp_get_attachment_url($thumbnail_id);
+        $link = get_term_link($categoria);
+    ?>
+
+      <a href="<?php echo esc_url($link); ?>" class="categoria-card">
+        <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr($categoria->name); ?>">
+        <span><?php echo esc_html($categoria->name); ?></span>
+      </a>
+
+    <?php } ?>
+
+  </div>
 </section>
