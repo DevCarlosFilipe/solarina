@@ -12,7 +12,7 @@ Solarina é um tema WordPress em desenvolvimento voltado para lojas WooCommerce 
 
 ## Status do desenvolvimento
 
-- Versão atual: `0.0.5`
+- Versão atual: `0.1.0`
 - O tema está em desenvolvimento ativo.
 - Ainda existem melhorias planejadas em design, usabilidade e integração completa com o painel do WordPress.
 
