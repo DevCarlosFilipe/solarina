@@ -1,5 +1,5 @@
 <section class="hero">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="15000">
 
         <!-- Indicators (bolinhas) -->
         <div class="carousel-indicators">

@@ -17,6 +17,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
+    transition: opacity 1s ease;
+}
+
+.carousel-fade .carousel-item {
+    transition: opacity 1s ease;
 }
 
 .hero .overlay {

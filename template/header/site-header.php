@@ -29,7 +29,7 @@
 
                 <a href="<?php echo wc_get_cart_url(); ?>" class="cart-icon position-relative">
 
-                    <i class="bi bi-cart3 text-white"></i>
+                    <i class="fa-solid fa-cart-shopping text-white"></i>
 
                     <span class="cart-count">
                         <?php
@@ -45,7 +45,7 @@
                 </a>
 
             <?php endif; ?>
-            <i class="bi bi-search text-white"></i>
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
         </div>
 
     </div>

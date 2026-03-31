@@ -51,7 +51,7 @@
 .carousel-item-custom {
     position: absolute;
     width: 30%;
-    transition: all 0.6s ease;
+    transition: all 1s ease;
     opacity: 0;
     transform: scale(0.9);
 }
@@ -94,7 +94,7 @@
 }
 
 .featured-carousel {
-    transition: transform 0.6s ease;
+    transition: transform 1s ease;
 }
 
 .featured-carousel .col-md-4 {

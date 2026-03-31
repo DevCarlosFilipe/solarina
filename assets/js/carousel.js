@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.style.transform = `translateX(-${index * itemWidth}px)`;
     }
 
-    setInterval(slide, 4000);
+    setInterval(slide, 15000);
 
 });
