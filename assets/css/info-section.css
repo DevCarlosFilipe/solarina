@@ -1,115 +1,145 @@
 .info-section {
-  padding: 60px 20px;
-  background: linear-gradient(to bottom,
-      #e6d3b3,
-      #d2b48c);
-  text-align: center;
-  position: relative;
+    padding: 60px 20px;
+    background-image: radial-gradient(circle at 100% -240%, #f0e0bd, #8b6346);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 120%;
+    animation: sand-sunshine 6s ease-in-out infinite;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-position: 0 0, 15px 15px;
+    background-size: 28px 28px, 16px 16px;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .info-text {
-  font-size: 28px;
-  color: #6b4f3b;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.5;
-  position: relative;
-  z-index: 2;
+    font-size: 28px;
+    color: #6b4f3b;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
 }
 
 .features-section {
-  padding: 60px 20px;
-  background: #f5e6d3;
+    padding: 60px 20px;
+    background: #f5e6d3;
 }
 
 .features-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-  padding: 40px 0 0;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    padding: 40px 0 0;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
 }
 
 .feature-item {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 140px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 140px;
 }
 
 .feature-icon {
-  position: relative;
-  width: 84px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6b4f3b;
-  font-size: 30px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+    position: relative;
+    width: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b4f3b;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .feature-icon::before,
 .feature-icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  height: 2px;
-  width: 48px;
-  background: rgba(107, 79, 59, 0.25);
-  transform: translateY(-50%);
-  z-index: 1;
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 48px;
+    background: rgba(107, 79, 59, 0.25);
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 .feature-icon::before {
-  left: -48px;
+    left: -48px;
 }
 
 .feature-icon::after {
-  right: -48px;
+    right: -48px;
 }
 
 .feature-item:first-child .feature-icon::before,
 .feature-item:last-child .feature-icon::after {
-  display: none;
+    display: none;
 }
 
 .feature-item p {
-  margin: 0;
-  color: #6b4f3b;
-  font-weight: 600;
+    margin: 0;
+    color: #6b4f3b;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
-  .info-section {
-    padding: 40px 20px;
-  }
+    .info-section {
+        padding: 40px 20px;
+    }
 
-  .info-text {
-    font-size: 22px;
-  }
+    .info-text {
+        font-size: 22px;
+    }
 
-  .features-container {
-    flex-wrap: wrap;
-    gap: 24px;
-    padding-top: 30px;
-  }
+    .features-container {
+        flex-wrap: wrap;
+        gap: 24px;
+        padding-top: 30px;
+    }
 
-  .features-container::before {
-    top: 45%;
-    left: 5%;
-    right: 5%;
-  }
+    .features-container::before {
+        top: 45%;
+        left: 5%;
+        right: 5%;
+    }
 
-  .feature-item {
-    max-width: 120px;
-  }
+    .feature-item {
+        max-width: 120px;
+    }
+}
+
+@keyframes sand-sunshine {
+
+    0%,
+    100% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 170%;
+    }
 }

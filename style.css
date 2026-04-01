@@ -4,7 +4,7 @@ Theme URI: https://github.com/DevCarlosFilipe/solarina
 Author: Carlos Filipe
 Author URI: https://github.com/DevCarlosFilipe
 Description: Tema custom Solarina especialmente modificado para lojas de roupas de praia. Desenvolvido para o site solarinacroche.com
-Version: 0.1.1
+Version: 0.1.2
 License: GPL2
 Text Domain: solarina
 */
@@ -13,6 +13,7 @@ body {
     margin: 0;
     font-family: 'Courgette', serif;
     font-style: italic;
+    background-color: #f5ecdf;
 }
 
 h1,

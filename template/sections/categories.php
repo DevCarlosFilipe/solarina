@@ -1,27 +1,33 @@
 <section class="categorias">
-  <div class="categorias-grid">
 
-    <?php
-    $args = array(
-        'taxonomy'   => 'product_cat',
-        'hide_empty' => true,
-    );
+    <!-- Título -->
+    <div class="text-center mb-5">
+        <h2 class="session-title">Categorias</h2>
+        <p>Encontre o que combina com você</p>
+    </div>
+    <div class="categorias-grid">
 
-    $categorias = get_terms($args);
+        <?php
+        $args = array(
+            'taxonomy'   => 'product_cat',
+            'hide_empty' => true,
+        );
 
-    foreach ($categorias as $categoria) {
+        $categorias = get_terms($args);
 
-        $thumbnail_id = get_term_meta($categoria->term_id, 'thumbnail_id', true);
-        $imagem = wp_get_attachment_url($thumbnail_id);
-        $link = get_term_link($categoria);
-    ?>
+        foreach ($categorias as $categoria) {
 
-      <a href="<?php echo esc_url($link); ?>" class="categoria-card">
-        <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr($categoria->name); ?>">
-        <span><?php echo esc_html($categoria->name); ?></span>
-      </a>
+            $thumbnail_id = get_term_meta($categoria->term_id, 'thumbnail_id', true);
+            $imagem = wp_get_attachment_url($thumbnail_id);
+            $link = get_term_link($categoria);
+        ?>
 
-    <?php } ?>
+            <a href="<?php echo esc_url($link); ?>" class="categoria-card">
+                <img src="<?php echo esc_url($imagem); ?>" alt="<?php echo esc_attr($categoria->name); ?>">
+                <span><?php echo esc_html($categoria->name); ?></span>
+            </a>
 
-  </div>
+        <?php } ?>
+
+    </div>
 </section>

@@ -57,7 +57,7 @@
 
                                 <!-- Botão -->
                                 <a href="<?php echo esc_url($product->add_to_cart_url()); ?>" 
-                                   class="btn btn-primary btn-sm">
+                                   class="btn btn-solarina btn-sm">
                                     Comprar
                                 </a>
 

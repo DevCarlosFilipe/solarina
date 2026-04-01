@@ -1,4 +1,20 @@
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    border: none !important; /* remove bootstrap */
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
 .product-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 🔥 quadrado */
+    object-fit: cover;   /* corta sem distorcer */
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -15,6 +31,31 @@
 .product-price {
     color: #a85c2c;
     font-weight: bold;
+}
+
+.product-card h5 {
+    font-family: 'Courgette', cursive;
+    color: #6b4f3b;
+    font-size: 18px;
+}
+
+.product-card h5 {
+    font-family: 'Courgette', cursive;
+    color: #6b4f3b;
+    font-size: 18px;
+}
+
+.btn-solarina {
+    background-color: #8b6346;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-solarina:hover {
+    background-color: #6f4e37;
+    color: #fff;
 }
 
 /* WooCommerce Categories */
