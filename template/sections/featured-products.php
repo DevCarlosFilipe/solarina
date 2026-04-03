@@ -44,7 +44,7 @@
 
                                 <!-- Imagem -->
                                 <a href="<?php the_permalink(); ?>" aria-label="<?php esc_attr_e('Ver '); the_title(); ?>">
-                                    <?php echo woocommerce_get_product_thumbnail(); ?>
+                                    <?php the_post_thumbnail('medium', ['alt' => get_the_title(), 'loading' => 'lazy']); ?>
                                 </a>
 
                                 <!-- Título -->
