@@ -4,25 +4,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!carousel) return;
 
-    let index = 0;
-    const items = carousel.children;
-    const total = items.length;
+    const items = carousel.querySelectorAll(".carousel-item");
+    const totalItems = items.length;
 
-    if (total <= 3) return;
+    // Não rotacionar se tiver 3 ou menos produtos
+    if (totalItems <= 3) return;
 
-    function slide() {
+    // Intervalo de rotação (em ms)
+    const ROTATION_INTERVAL = 5000; // 5 segundos
+    const TRANSITION_DURATION = 600; // duração da transição CSS
 
-        index++;
+    let isAnimating = false;
 
-        if (index > total - 3) {
-            index = 0;
-        }
+    function rotateCarousel() {
+        if (isAnimating) return;
 
-        const itemWidth = items[0].offsetWidth + 16;
+        isAnimating = true;
 
-        carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+        // Pega o primeiro item
+        const firstItem = carousel.querySelector(".carousel-item");
+
+        if (!firstItem) return;
+
+        // Adiciona classe de saída (fade + blur)
+        firstItem.classList.add("exiting");
+
+        // Aguarda a transição acabar
+        setTimeout(() => {
+            // Remove o elemento do DOM
+            firstItem.remove();
+
+            // Clona e adiciona ao final
+            const clonedItem = firstItem.cloneNode(true);
+            clonedItem.classList.remove("exiting");
+            carousel.appendChild(clonedItem);
+
+            isAnimating = false;
+        }, TRANSITION_DURATION);
     }
 
-    setInterval(slide, 15000);
+    // Inicia rotação automática
+    setInterval(rotateCarousel, ROTATION_INTERVAL);
+
+    // Pausa em hover
+    carousel.addEventListener("mouseenter", function () {
+        // Aqui você pode pausar o setInterval se necessário
+        // Por enquanto, mantém rodando
+    });
 
 });

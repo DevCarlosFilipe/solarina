@@ -16,7 +16,7 @@
         <?php if (class_exists('WooCommerce')) : ?>
 
             <div class="featured-carousel-wrapper">
-                <div class="featured-carousel row flex-nowrap g-4">
+                <div class="featured-carousel">
 
                     <?php
                     $args = [
@@ -38,12 +38,12 @@
                             global $product;
                     ?>
 
-                        <div class="col-md-4 col-sm-6 flex-shrink-0">
+                        <div class="carousel-item">
 
-                            <div class="product-card text-center p-3 border rounded h-100">
+                            <div class="product-card text-center p-3 h-100">
 
                                 <!-- Imagem -->
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="<?php the_permalink(); ?>" aria-label="<?php esc_attr_e('Ver '); the_title(); ?>">
                                     <?php echo woocommerce_get_product_thumbnail(); ?>
                                 </a>
 
