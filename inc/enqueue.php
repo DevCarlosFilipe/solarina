@@ -40,6 +40,13 @@ function solarina_enqueue_assets()
         solarina_get_asset_version('/style.css')
     );
 
+    wp_enqueue_style(
+        'solarina-header',
+        get_template_directory_uri() . '/assets/css/header.css',
+        ['solarina-style'],
+        solarina_get_asset_version('/assets/css/header.css')
+    );
+
     if (is_front_page()) {
         wp_enqueue_style(
             'solarina-hero',

@@ -44,7 +44,11 @@
     border: none;
     border-radius: 6px;
     transition: 0.3s;
-    margin-top: auto;
+    margin: auto;
+    padding: 5px 30px;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 12pt;
 }
 
 .btn-solarina:hover {

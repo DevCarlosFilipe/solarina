@@ -1,6 +1,7 @@
 <?php
 
-function solarina_customize_register($wp_customize) {
+function solarina_customize_register($wp_customize)
+{
 
     $wp_customize->add_section('hero_section', [
         'title' => 'Hero Slider',
@@ -46,6 +47,32 @@ function solarina_customize_register($wp_customize) {
             'type' => 'url'
         ]);
     }
+
+    $wp_customize->add_section('solarina_social_section', array(
+        'title' => 'Redes Sociais',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('solarina_instagram', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('solarina_instagram', array(
+        'label' => 'Instagram (@usuario)',
+        'section' => 'solarina_social_section',
+        'type' => 'text',
+    ));
 }
 
 add_action('customize_register', 'solarina_customize_register');
+
+function solarina_theme_setup() {
+    add_theme_support('custom-logo', [
+        'height'      => 100,
+        'width'       => 300,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ]);
+}
+add_action('after_setup_theme', 'solarina_theme_setup');
