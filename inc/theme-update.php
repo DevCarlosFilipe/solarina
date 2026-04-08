@@ -2,9 +2,6 @@
 
 add_action('after_setup_theme', function () {
 
-    // CARREGA PARSEDOWN
-    require_once get_template_directory() . '/inc/parsedown/Parsedown.php';
-
     // UPDATE CHECKER
     require_once get_template_directory() . '/inc/theme-update-checker/theme-update-checker.php';
 
