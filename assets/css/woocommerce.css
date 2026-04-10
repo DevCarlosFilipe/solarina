@@ -237,7 +237,7 @@
 }
 
 .shop-hero {
-    background: linear-gradient(180deg, rgba(245, 236, 223, 0.92) 0%, rgba(255, 255, 255, 0.92) 100%);
+    background: linear-gradient(180deg, #f3b152eb 0%, rgba(255, 255, 255, 0.92) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
