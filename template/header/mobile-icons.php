@@ -24,14 +24,9 @@
 
 <?php else : ?>
 
-    <!-- Login -->
-    <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="btn-login">
-        Entrar
-    </a>
-
-    <!-- Cadastro -->
-    <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="btn-register">
-        Cadastrar
+    <!-- Minha Conta -->
+    <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="btn-account">
+        Minha Conta
     </a>
 
 <?php endif; ?>

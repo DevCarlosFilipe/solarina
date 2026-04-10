@@ -34,6 +34,14 @@
     color: #333 !important;
 }
 
+.nav-link.active,
+.nav-link.active:hover,
+.nav-link.active:focus {
+    background: #a85c2c;
+    color: #ffffff !important;
+    border-radius: 999px;
+}
+
 .cart-icon {
     text-decoration: none;
 }

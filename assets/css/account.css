@@ -1,0 +1,36 @@
+.account-page {
+  padding: 60px 20px;
+}
+
+.account-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.account-wrapper {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 30px;
+}
+
+.account-navigation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.account-navigation a {
+  display: block;
+  padding: 10px;
+  color: #6b4f3b;
+  text-decoration: none;
+}
+
+.account-navigation a:hover {
+  background: #f5e6d3;
+}
+
+.account-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}

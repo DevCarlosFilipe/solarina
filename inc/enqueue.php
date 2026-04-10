@@ -94,9 +94,7 @@ function solarina_enqueue_assets()
     }
 
     $load_products_css = false;
-    if (function_exists('is_woocommerce') && is_woocommerce()) {
-        $load_products_css = true;
-    } elseif (function_exists('is_product') && is_product()) {
+    if ((function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag())) {
         $load_products_css = true;
     }
 
@@ -106,6 +104,32 @@ function solarina_enqueue_assets()
             get_template_directory_uri() . '/assets/css/products.css',
             ['solarina-style'],
             solarina_get_asset_version('/assets/css/products.css')
+        );
+    }
+
+    if ((function_exists('is_woocommerce') && is_woocommerce()) || (function_exists('is_account_page') && is_account_page())) {
+        wp_enqueue_style(
+            'solarina-woocommerce',
+            get_template_directory_uri() . '/assets/css/woocommerce.css',
+            ['solarina-style'],
+            solarina_get_asset_version('/assets/css/woocommerce.css')
+        );
+
+        wp_enqueue_style(
+            'solarina-woocommerce-pagination',
+            get_template_directory_uri() . '/assets/css/woocommerce-pagination.css',
+            ['solarina-woocommerce'],
+            solarina_get_asset_version('/assets/css/woocommerce-pagination.css')
+        );
+    }
+
+    if (function_exists('is_account_page') && is_account_page()) {
+        wp_enqueue_script(
+            'solarina-myaccount',
+            get_template_directory_uri() . '/assets/js/myaccount.js',
+            [],
+            solarina_get_asset_version('/assets/js/myaccount.js'),
+            true
         );
     }
 

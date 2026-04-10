@@ -16,12 +16,8 @@
 
     <?php else : ?>
 
-        <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="btn-login text-white">
-            Entrar
-        </a>
-
-        <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="btn-register text-white">
-            Cadastrar
+        <a href="<?php echo wc_get_page_permalink('myaccount'); ?>" class="btn-account text-white">
+            Minha Conta
         </a>
 
     <?php endif; ?>

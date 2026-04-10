@@ -1,0 +1,575 @@
+.login-register-grid,
+.account-section {
+    padding: 4rem 0;
+}
+
+.auth-page-header {
+    max-width: 780px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+}
+
+.auth-page-header .section-subtitle {
+    margin-top: 1rem;
+    color: #5e4a38;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.auth-grid {
+    display: grid;
+    gap: 1.75rem;
+}
+
+@media (min-width: 992px) {
+    .auth-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.auth-card {
+    background: #ffffff;
+    border: 1px solid rgba(168, 92, 44, 0.16);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.04);
+}
+
+.auth-card h2 {
+    margin-bottom: 1.25rem;
+    color: #a85c2c;
+    font-size: 1.75rem;
+}
+
+.woocommerce-form .form-row {
+    margin-top: 1.4rem;
+}
+
+.woocommerce-form label {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-weight: 600;
+    color: #4a3422;
+}
+
+.woocommerce-form input.input-text,
+.woocommerce-form input[type="email"],
+.woocommerce-form input[type="password"],
+.woocommerce-form input[type="text"] {
+    width: 100%;
+    padding: 1rem 1rem;
+    border: 1px solid #ddd2c4;
+    border-radius: 12px;
+    background: #fbf4e9;
+    color: #4a3422;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    height: 61%;
+    width: 3.5rem;
+    border: none;
+    background: transparent;
+    color: #4a3422;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.password-toggle i {
+    font-size: 1.1rem;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+    padding-right: 3.5rem;
+}
+
+.woocommerce-button {
+    width: 100%;
+    padding: 1rem 1.4rem;
+    background: #a85c2c;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.woocommerce-button:hover {
+    background: #8a4f24;
+}
+
+.woocommerce-LostPassword a {
+    color: #a85c2c;
+    text-decoration: none;
+}
+
+.woocommerce-LostPassword a:hover {
+    text-decoration: underline;
+}
+
+.auth-reset-password .woocommerce-form-row {
+    margin-bottom: 1.25rem;
+}
+
+.auth-reset-password .woocommerce-LostPassword {
+    margin-top: 1rem;
+}
+
+.account-grid {
+    display: grid;
+    gap: 1.75rem;
+}
+
+@media (min-width: 992px) {
+    .account-grid {
+        grid-template-columns: 280px minmax(0, 1fr);
+    }
+}
+
+.account-sidebar {
+    background: #ffffff;
+    border: 1px solid rgba(168, 92, 44, 0.16);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.account-main {
+    background: #ffffff;
+    border: 1px solid rgba(168, 92, 44, 0.16);
+    border-radius: 20px;
+    padding: 2rem;
+    min-height: 520px;
+}
+
+.woocommerce-MyAccount-navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.woocommerce-MyAccount-navigation li {
+    margin-bottom: 0.9rem;
+}
+
+.woocommerce-MyAccount-navigation li a {
+    display: block;
+    padding: 1rem 1.1rem;
+    color: #4a3422;
+    background: #fbf4e9;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.woocommerce-MyAccount-navigation li.is-active a,
+.woocommerce-MyAccount-navigation li a:hover {
+    background: #f3d1b7;
+    color: #a85c2c;
+}
+
+.dashboard-header h2 {
+    margin: 0 0 0.75rem;
+    color: #a85c2c;
+    font-size: 2rem;
+}
+
+.dashboard-header h2 span {
+    display: block;
+    color: #4a3422;
+    font-size: 1.2rem;
+    margin-top: 0.35rem;
+}
+
+.dashboard-header p {
+    max-width: 700px;
+    margin: 0;
+    color: #5e4a38;
+    line-height: 1.8;
+}
+
+.dashboard-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.dashboard-card {
+    display: block;
+    padding: 1.5rem;
+    background: #fbf4e9;
+    border: 1px solid rgba(168, 92, 44, 0.12);
+    border-radius: 18px;
+    text-decoration: none;
+    color: #4a3422;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-card h3 {
+    margin: 0 0 0.65rem;
+    color: #a85c2c;
+}
+
+.dashboard-card p {
+    margin: 0;
+    line-height: 1.75;
+}
+
+.shop-hero {
+    background: linear-gradient(180deg, rgba(245, 236, 223, 0.92) 0%, rgba(255, 255, 255, 0.92) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+}
+
+.shop-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.shop-hero .section-title {
+    margin-bottom: 1rem;
+}
+
+.shop-description {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #5e4a38;
+    line-height: 1.85;
+}
+
+.shop-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.woocommerce-ordering,
+.woocommerce-result-count {
+    margin: 0;
+}
+
+.woocommerce-ordering {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.woocommerce-ordering .orderby {
+    padding: 0.9rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid #ddd2c4;
+    background: #fbf4e9;
+    color: #4a3422;
+    appearance: none;
+    cursor: pointer;
+}
+
+.woocommerce-ordering .orderby option {
+    color: #4a3422;
+}
+
+.woocommerce-ordering::after {
+    content: '\f0dc';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: -2rem;
+    pointer-events: none;
+    color: #4a3422;
+}
+
+@media (max-width: 768px) {
+    .shop-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.products-section {
+    padding-bottom: 5rem;
+}
+
+.single-product-section {
+    padding: 5rem 0;
+}
+
+.single-product-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .single-product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.single-product-gallery {
+    background: #ffffff;
+    border: 1px solid rgba(168, 92, 44, 0.16);
+    border-radius: 24px;
+    padding: 1.5rem;
+}
+
+.single-product-summary {
+    background: #ffffff;
+    border: 1px solid rgba(168, 92, 44, 0.16);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+.single-product-summary .product_title {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    color: #a85c2c;
+    font-size: 2.5rem;
+}
+
+.single-product-summary .price {
+    color: #a85c2c;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.single-product-summary .woocommerce-product-details__short-description,
+.single-product-summary .woocommerce-product-details__meta {
+    color: #4a3422;
+}
+
+.single-product-summary .button.single_add_to_cart_button {
+    width: 100%;
+    border-radius: 999px;
+    padding: 1rem 1.5rem;
+    background: #a85c2c;
+    border: none;
+}
+
+.single-product-summary .button.single_add_to_cart_button:hover {
+    background: #8a4f24;
+}
+
+.woocommerce ul.products li.product .button.add_to_cart_button,
+.woocommerce-page ul.products li.product .button.add_to_cart_button,
+.woocommerce ul.products li.product .button.product_type_simple,
+.woocommerce-page ul.products li.product .button.product_type_simple {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.95rem 1.4rem;
+    background: #a85c2c;
+    color: #ffffff;
+    border: none;
+    transition: background 0.25s ease;
+}
+
+.woocommerce ul.products li.product .button.add_to_cart_button:hover,
+.woocommerce-page ul.products li.product .button.add_to_cart_button:hover,
+.woocommerce ul.products li.product .button.product_type_simple:hover,
+.woocommerce-page ul.products li.product .button.product_type_simple:hover {
+    background: #8a4f24;
+}
+
+.cart-page-section {
+    padding: 5rem 0;
+}
+
+.cart-page-header .section-title {
+    margin-bottom: 1rem;
+}
+
+.woocommerce-cart-form .shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.woocommerce-cart-form th,
+.woocommerce-cart-form td {
+    padding: 1rem 0.75rem;
+    border-bottom: 1px solid rgba(168, 92, 44, 0.12);
+    vertical-align: middle;
+}
+
+.woocommerce-cart-form .product-remove {
+    width: 48px;
+}
+
+.woocommerce-cart-form .product-thumbnail img {
+    max-width: 90px;
+    border-radius: 12px;
+}
+
+.woocommerce-cart-form .product-name a {
+    display: inline-block;
+    color: #4a3422;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.woocommerce-cart-form .product-price,
+.woocommerce-cart-form .product-subtotal {
+    color: #a85c2c;
+    font-weight: 700;
+}
+
+.woocommerce-cart-form .product-quantity .qty {
+    width: 72px;
+    padding: 0.75rem;
+    border: 1px solid #ddd2c4;
+    border-radius: 12px;
+    background: #fbf4e9;
+}
+
+.woocommerce-cart-form .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.woocommerce-cart-form .actions .coupon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.woocommerce-cart-form .actions .coupon input {
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #ddd2c4;
+    background: #fbf4e9;
+}
+
+.woocommerce-cart-form .actions .button,
+.woocommerce-cart-form .actions .woocommerce-button {
+    border-radius: 999px;
+    background: #a85c2c;
+    color: #ffffff;
+    padding: 0.95rem 1.5rem;
+    border: none;
+}
+
+.woocommerce-cart-form .actions .button:hover,
+.woocommerce-cart-form .actions .woocommerce-button:hover {
+    background: #8a4f24;
+}
+
+.woocommerce-cart-form .coupon label {
+    color: #4a3422;
+    font-weight: 600;
+}
+
+.cart-collaterals {
+    display: grid;
+    gap: 1.75rem;
+}
+
+@media (min-width: 992px) {
+    .cart-collaterals {
+        grid-template-columns: 1fr 320px;
+    }
+}
+
+.woocommerce-cart-form .cart-subtotal,
+.woocommerce-cart-form .order-total {
+    color: #4a3422;
+}
+
+.woocommerce table.shop_table .product-name a:hover {
+    color: #a85c2c;
+}
+    .woocommerce-pagination,
+    .woocommerce nav.woocommerce-pagination {
+        margin-top: 3rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .woocommerce-pagination .page-numbers,
+    .woocommerce nav.woocommerce-pagination .page-numbers,
+    .woocommerce-pagination .nav-links a,
+    .woocommerce nav.woocommerce-pagination .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 3.1rem;
+        height: 3.1rem;
+        padding: 0 0.9rem;
+        border-radius: 999px;
+        border: 1px solid #ddd2c4;
+        background: #fbf4e9;
+        color: #4a3422;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.25s ease;
+    }
+
+    .woocommerce-pagination .page-numbers.current,
+    .woocommerce-pagination .nav-links .current,
+    .woocommerce nav.woocommerce-pagination .page-numbers.current,
+    .woocommerce nav.woocommerce-pagination .nav-links .current {
+        background: #a85c2c;
+        color: #ffffff;
+        border-color: #a85c2c;
+    }
+
+    .woocommerce-pagination .page-numbers:hover,
+    .woocommerce-pagination .nav-links a:hover,
+    .woocommerce nav.woocommerce-pagination .page-numbers:hover,
+    .woocommerce nav.woocommerce-pagination .nav-links a:hover {
+        background: #8a4f24;
+        color: #ffffff;
+        border-color: #8a4f24;
+    }
+
+    .woocommerce-pagination .page-numbers.dots,
+    .woocommerce nav.woocommerce-pagination .page-numbers.dots {
+        pointer-events: none;
+        background: transparent;
+        border-color: transparent;
+        color: #5e4a38;
+    }
