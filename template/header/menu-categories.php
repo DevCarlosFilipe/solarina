@@ -14,7 +14,7 @@
     ?>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link text-white<?php echo $is_shop ? ' active' : ''; ?>" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>">
+                <a class="nav-link<?php echo $is_shop ? ' active' : ''; ?>" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>">
                     Todos 
                 </a>
             </li>
@@ -23,7 +23,7 @@
                 $is_current = $current_category_id === $category->term_id;
             ?>
                 <li class="nav-item">
-                    <a class="nav-link text-white<?php echo $is_current ? ' active' : ''; ?>" href="<?php echo get_term_link($category); ?>">
+                    <a class="nav-link<?php echo $is_current ? ' active' : ''; ?>" href="<?php echo get_term_link($category); ?>">
                         <?php echo esc_html($category->name); ?>
                     </a>
                 </li>

@@ -69,6 +69,7 @@
 .woocommerce ul.products li.product-category {
     list-style: none;
     display: flex;
+    justify-content: center;
 }
 
 .woocommerce ul.products li.product-card-item {
