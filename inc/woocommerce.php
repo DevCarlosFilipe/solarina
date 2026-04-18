@@ -70,3 +70,12 @@ add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
     return $fragments;
 
 });
+
+
+add_action('pre_get_posts', function ($query) {
+
+    if (!is_admin() && $query->is_main_query() && $query->is_search()) {
+        $query->set('post_type', 'product');
+    }
+
+});

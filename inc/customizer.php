@@ -1,5 +1,14 @@
 <?php
 
+function solarina_sanitize_image($image)
+{
+    if (is_numeric($image)) {
+        return absint($image);
+    }
+
+    return esc_url_raw($image);
+}
+
 function solarina_customize_register($wp_customize)
 {
 
@@ -47,6 +56,25 @@ function solarina_customize_register($wp_customize)
             'type' => 'url'
         ]);
     }
+
+    $wp_customize->add_setting('solarina_white_logo', array(
+        'default' => '',
+        'sanitize_callback' => 'solarina_sanitize_image',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'solarina_white_logo',
+            [
+                'label' => 'Logo Branca',
+                'section' => 'title_tagline',
+                'settings' => 'solarina_white_logo',
+                'description' => 'Logo usada no menu transparente, se definida.',
+            ]
+        )
+    );
 
     $wp_customize->add_section('solarina_social_section', array(
         'title' => 'Redes Sociais',

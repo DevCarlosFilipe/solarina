@@ -14,3 +14,7 @@
     <?php get_template_part('template/header/mobile-header'); ?>
 
 </header>
+
+<?php if ( ! is_front_page() && ! is_home() && !( function_exists( 'is_shop' ) && is_shop() ) && !( function_exists( 'is_product_category' ) && is_product_category() ) ) : ?>
+    <div class="page-top-backdrop"></div>
+<?php endif; ?>

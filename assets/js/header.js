@@ -4,15 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!header) return;
 
-    window.addEventListener("scroll", function () {
-
+    const updateHeaderScrolled = function () {
         if (window.scrollY > 50) {
             header.classList.add("scrolled");
         } else {
             header.classList.remove("scrolled");
         }
+    };
 
-    });
+    updateHeaderScrolled();
+    window.addEventListener("scroll", updateHeaderScrolled);
 
 });
 

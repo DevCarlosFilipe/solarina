@@ -5,18 +5,13 @@
  */
 $show_instagram = false;
 
-// Verifica se plugin existe
-if (class_exists('SB_Instagram_Feed')) {
-
-    // Verifica se tem configurações salvas
-    $settings = get_option('sb_instagram_settings');
-
-    if (!empty($settings) && !empty($settings['access_token'])) {
-        $show_instagram = true;
-    }
-    $instagram = get_theme_mod('solarina_instagram');
-    $link = $instagram ? 'https://instagram.com/' . ltrim($instagram, '@') : '#';
+// Exibe a seção se o shortcode existir ou se o plugin estiver ativo.
+if (shortcode_exists('instagram-feed') || class_exists('SB_Instagram_Feed')) {
+    $show_instagram = true;
 }
+
+$instagram = get_theme_mod('solarina_instagram');
+$link = $instagram ? 'https://instagram.com/' . ltrim($instagram, '@') : '#';
 ?>
 
 <?php if ($show_instagram) : ?>
@@ -31,15 +26,6 @@ if (class_exists('SB_Instagram_Feed')) {
             </div>
 
             <?php echo do_shortcode('[instagram-feed num=8 cols=4 showheader=false showfollow=false]'); ?>
-
-            <?php
-            $instagram = get_theme_mod('solarina_instagram');
-            $link = $instagram ? 'https://instagram.com/' . ltrim($instagram, '@') : '#';
-            ?>
-
-            <a href="<?php echo esc_url($link); ?>" target="_blank" class="btn btn-md btn-primary mt-4">
-                Seguir
-            </a>
 
         </div>
     </section>

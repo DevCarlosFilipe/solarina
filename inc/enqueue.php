@@ -76,6 +76,13 @@ function solarina_enqueue_assets()
             solarina_get_asset_version('/assets/css/info-section.css')
         );
 
+        wp_enqueue_style(
+            'solarina-follow',
+            get_template_directory_uri() . '/assets/css/follow.css',
+            ['solarina-style'],
+            solarina_get_asset_version('/assets/css/follow.css')
+        );
+
         wp_enqueue_script(
             'bootstrap-js',
             'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
@@ -93,12 +100,16 @@ function solarina_enqueue_assets()
         );
     }
 
-    $load_products_css = false;
-    if ((function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag())) {
-        $load_products_css = true;
+    if (function_exists('is_search') && is_search()) {
+        wp_enqueue_style(
+            'solarina-search',
+            get_template_directory_uri() . '/assets/css/search.css',
+            ['solarina-style'],
+            solarina_get_asset_version('/assets/css/search.css')
+        );
     }
 
-    if ($load_products_css) {
+    if ((function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag())) {
         wp_enqueue_style(
             'solarina-products',
             get_template_directory_uri() . '/assets/css/products.css',
@@ -124,6 +135,13 @@ function solarina_enqueue_assets()
     }
 
     if (function_exists('is_account_page') && is_account_page()) {
+        wp_enqueue_style(
+            'solarina-account',
+            get_template_directory_uri() . '/assets/css/account.css',
+            ['solarina-style'],
+            solarina_get_asset_version('/assets/css/account.css')
+        );
+
         wp_enqueue_script(
             'solarina-myaccount',
             get_template_directory_uri() . '/assets/js/myaccount.js',
