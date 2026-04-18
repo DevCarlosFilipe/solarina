@@ -1,28 +1,60 @@
 # Solarina
 
-Solarina é um tema WordPress em desenvolvimento voltado para lojas WooCommerce de moda feminina, com foco especial em roupas de praia. O objetivo do tema é oferecer um visual leve, elegante e profissional, ideal para marcas que vendem biquínis, maiôs, saídas de praia e acessórios de verão.
+Solarina é um tema WordPress premium para lojas WooCommerce de moda praia e verão. O tema é pensado para marcas de biquínis, maiôs, saídas de praia e acessórios; com um visual leve, elegante e moderno, ideal para e-commerces que buscam uma experiência de compra refinada.
 
-## Sobre o tema
+## Versão atual
 
-- Tema pensado para e-commerce de moda praia feminina.
-- Compatível com WooCommerce para criar uma loja online completa.
-- Layout responsivo com foco em performance e usabilidade.
-- Seções de destaque como hero, produtos em destaque, categorias e informações de marca.
-- Design limpo e acolhedor, com tipografia cursiva e elementos de praia.
+- `0.5.6`
+- Lançamento focado em performance, experiência de usuário e continuidade de design.
 
-## Status do desenvolvimento
+## Principais recursos
 
-- Versão atual: `0.1.0`
-- O tema está em desenvolvimento ativo.
-- Ainda existem melhorias planejadas em design, usabilidade e integração completa com o painel do WordPress.
+- Compatível com WooCommerce para loja, produtos e checkout.
+- Layout responsivo para desktop, tablet e mobile.
+- Área de `My Account` personalizada e integrada com WooCommerce.
+- Seção de busca (`search`) estilizada com cards consistentes ao tema.
+- Cabeçalho com avatar do usuário logado e menu mobile otimizado.
+- Carregamento condicional de CSS por página para melhorar performance.
+- Seção Instagram / Follow que exibe shortcode do plugin quando disponível.
+- Páginas de produto com layout elegante, reviews estilizados e abas customizadas.
+- Seções de destaque: hero, produtos, categorias, informações e follow.
 
-## Como usar
+## Instalação
 
 1. Copie a pasta do tema para `wp-content/themes/solarina`.
-2. Ative o tema no painel de administração do WordPress.
-3. Instale e ative o plugin WooCommerce.
-4. Personalize as seções do tema via Customizer e adicione produtos.
+2. Ative o tema em **Aparência > Temas** no painel WordPress.
+3. Instale e ative o plugin **WooCommerce**.
+4. Instale o plugin de Instagram compatível se quiser usar a seção `Follow`.
+5. Configure o Customizer e o menu de navegação conforme a identidade da marca.
 
-## Objetivo
+## Como atualizar para a versão 0.5.6
 
-O tema pretende ser uma solução completa para lojas online de roupas femininas de praia, unindo estilo, organização e experiência de compra intuitiva.
+- Atualize `style.css` para `0.5.6`.
+- Verifique o `CHANGELOG.md` para ver o histórico das alterações.
+- Certifique-se de que os plugins necessários estejam ativos: WooCommerce e plugin de Instagram.
+
+## O que mudou no release `0.5.6`
+
+- Adicionado `page-top-backdrop` com degradê laranja nas páginas sem background, garantindo melhor transição visual abaixo do menu fixo.
+- Avatar do usuário logado exibido no cabeçalho desktop, igual ao menu mobile.
+- Página de busca (`search`) redesenhada com cards responsivos e estilo do tema.
+- Carregamento de CSS separado por página: `search.css`, `account.css`, `woocommerce.css`, `products.css` e outros apenas quando necessário.
+- Ajuste no `header.css` para remover troca de logo branca no menu mobile e manter consistência.
+- Fix na seção Instagram (`follow`) usando `shortcode_exists()` para garantir que o shortcode seja executado quando disponível.
+
+## Estrutura do tema
+
+- `assets/css/` – estilos específicos por seção e funcionalidade.
+- `assets/js/` – scripts do tema, como controle de header e carrossel.
+- `template/` – componentes do cabeçalho, rodapé e seções customizadas.
+- `woocommerce/` – templates WooCommerce sobrescritos.
+- `inc/` – funções do tema, carregamento de assets, integração com plugin e atualizações.
+
+## Suporte
+
+- Ideal para ecommerces de moda praia e lifestyle.
+- Recomendado o uso com WooCommerce e um plugin de Instagram compatível para a seção `Follow`.
+
+## Licença
+
+- GPLv2 ou superior
