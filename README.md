@@ -4,7 +4,7 @@ Solarina é um tema WordPress premium para lojas WooCommerce de moda praia e ver
 
 ## Versão atual
 
-- `0.5.6`
+- `1.0.0`
 - Lançamento focado em performance, experiência de usuário e continuidade de design.
 
 ## Principais recursos

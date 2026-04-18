@@ -1,8 +1,8 @@
-# Solarina Release 0.5.6
+# Solarina Release 1.0.0
 
 ## Resumo do lançamento
 
-Este release finaliza a evolução do tema Solarina até a versão `0.5.6`, com foco em acabamento visual, performance e integração sólida com o WooCommerce.
+Este release finaliza a evolução do tema Solarina até a versão `1.0.0`, com foco em acabamento visual, performance e integração sólida com o WooCommerce.
 
 ## O que foi entregue
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.5.6] - 2026-04-18
+## [1.0.0] - 2026-04-18
 ### Added
 - Adicionado `page-top-backdrop` com degradê laranja nas páginas sem background completo, empurrando o conteúdo para baixo do menu fixo.
 - Inserido avatar do usuário logado no cabeçalho desktop, espelhando o comportamento do menu mobile.
