@@ -1,4 +1,13 @@
 <?php
+/**
+ * Lost Password Form
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/form-lost-password.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.2.0
+ */
 defined('ABSPATH') || exit;
 $myaccount_url = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : wp_login_url();
 ?>

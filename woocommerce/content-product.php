@@ -1,4 +1,13 @@
 <?php
+/**
+ * The template for displaying product content within loops.
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.4.0
+ */
 defined('ABSPATH') || exit;
 global $product;
 ?>

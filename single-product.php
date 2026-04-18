@@ -1,4 +1,13 @@
 <?php
+/**
+ * The template for displaying product content in the single-product.php template.
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 1.6.4
+ */
 defined('ABSPATH') || exit;
 get_header();
 

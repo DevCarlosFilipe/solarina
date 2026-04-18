@@ -1,4 +1,13 @@
 <?php
+/**
+ * My Account Page
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/my-account.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 3.5.0
+ */
 defined('ABSPATH') || exit;
 ?>
 

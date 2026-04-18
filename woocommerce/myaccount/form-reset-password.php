@@ -1,4 +1,13 @@
 <?php
+/**
+ * Reset Password Form
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/form-reset-password.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.2.0
+ */
 defined('ABSPATH') || exit;
 $key = isset($_GET['key']) ? sanitize_text_field(wp_unslash($_GET['key'])) : '';
 $login = isset($_GET['login']) ? sanitize_text_field(wp_unslash($_GET['login'])) : '';

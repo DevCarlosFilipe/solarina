@@ -1,4 +1,13 @@
 <?php
+/**
+ * My Account navigation
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/navigation.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.3.0
+ */
 defined('ABSPATH') || exit;
 ?>
 <nav class="account-navigation">

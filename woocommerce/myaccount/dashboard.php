@@ -1,4 +1,13 @@
 <?php
+/**
+ * My Account Dashboard
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/dashboard.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 4.4.0
+ */
 defined('ABSPATH') || exit;
 $current_user = wp_get_current_user();
 ?>

@@ -1,4 +1,13 @@
 <?php
+/**
+ * Login Form
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/form-login.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.9.0
+ */
 defined('ABSPATH') || exit;
 $show_registration = 'yes' === get_option('woocommerce_enable_myaccount_registration');
 $registration_generate_username = 'yes' === get_option('woocommerce_registration_generate_username');
