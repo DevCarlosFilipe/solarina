@@ -134,6 +134,14 @@
 }
 
 
+.lojas {
+    background: #ffffff;
+}
+
+.lojas .product-card {
+    background: #ffffff;
+}
+
 /* Carousel Custom Styles - Featured Products */
 
 .featured-carousel-wrapper {
