@@ -47,6 +47,13 @@ function solarina_enqueue_assets()
         solarina_get_asset_version('/assets/css/header.css')
     );
 
+    wp_enqueue_style(
+        'solarina-footer',
+        get_template_directory_uri() . '/assets/css/footer.css',
+        ['solarina-style'],
+        solarina_get_asset_version('/assets/css/footer.css')
+    );
+
     if (is_front_page()) {
         wp_enqueue_style(
             'solarina-hero',

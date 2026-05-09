@@ -76,6 +76,15 @@
     justify-content: center;
 }
 
+/* Mobile specific account button style */
+.mobile-actions .btn-account {
+    color: #333 !important;
+}
+
+.mobile-actions .btn-account:hover {
+    color: #a85c2c !important;
+}
+
 .btn-account:hover,
 .cart-icon:hover,
 .mobile-cart .cart-link:hover {
@@ -167,10 +176,14 @@
 /* MENU MOBILE */
 
 .mobile-header {
-    position: sticky;
+    position: relative;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 999;
     border-bottom: 1px solid #eee;
+    box-sizing: border-box;
 }
 
 .mobile-top {
@@ -178,6 +191,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.mobile-top > * {
+    min-width: 0;
 }
 
 .mobile-logo img {
@@ -188,6 +207,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    min-width: 0;
 }
 
 .mobile-avatar img {
@@ -235,10 +255,14 @@
     background: #f5e6d3;
     outline: none;
     width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .mobile-search-bar form {
     width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .search-close {
@@ -253,7 +277,9 @@
     gap: 10px;
     overflow-x: auto;
     padding: 10px 15px;
+    width: 100%;
     background: #f5e6d3;
+    box-sizing: border-box;
 
     scrollbar-width: none;
     /* Firefox */

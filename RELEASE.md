@@ -1,33 +1,25 @@
-# Solarina Release 1.1.0
+# Solarina Release 1.1.1
 
 ## Resumo do lançamento
 
-Este release atualiza o tema Solarina para a versão `1.1.0`, com foco na organização dos estilos de produto e no carregamento condicional de CSS específico para templates do WooCommerce.
+Este release atualiza o tema Solarina para a versão `1.1.1`, com foco em ajustes do header móvel e correções de layout na tela inicial.
 
 ## O que foi entregue
 
-- Criado CSS dedicado para `woocommerce/single-product/summary.php` em `assets/css/single-product-summary.css`.
-- Criado CSS dedicado para a galeria de produto em `assets/css/single-product-gallery.css`.
-- Criado CSS dedicado para produtos relacionados em `assets/css/single-product-related.css`.
-- Criado CSS dedicado para abas do produto em `assets/css/single-product-tabs.css`.
-- Criado CSS dedicado para reviews do produto em `assets/css/single-product-reviews.css`.
-- Atualizado `inc/enqueue.php` para registrar e carregar estes assets somente em páginas de produto.
-- Atualizada a versão do tema para `1.1.0` em `style.css`.
+- Separado o estilo de `Minha Conta` do mobile do desktop em `assets/css/header.css`.
+- Ajustado o `mobile-header` para respeitar largura total e não causar overflow na página inicial.
+- Corrigido o comportamento do mobile header na home, mantendo o layout estável e sem rolagem horizontal indesejada.
+- Atualizada a versão do tema para `1.1.1` em `style.css`.
 
 ## Notas de release
 
-- A organização de estilos do tema agora está mais granular, com assets específicos para cada parte do template de produto.
-- A performance do carregamento de páginas de produto melhora ao somente carregar os CSS necessários.
-- O release serve como base para futuras personalizações de templates WooCommerce sem misturar estilos globais.
+- O mobile header agora funciona corretamente na tela inicial, sem exceder a largura do dispositivo.
+- O botão `Minha Conta` no mobile agora tem estilo isolado, sem afetar a versão desktop.
+- A base do release anterior de estilos de WooCommerce permanece intacta.
 
 ## Arquivos atualizados nessa versão
 
 - `style.css`
 - `CHANGELOG.md`
 - `RELEASE.md`
-- `inc/enqueue.php`
-- `assets/css/single-product-summary.css`
-- `assets/css/single-product-gallery.css`
-- `assets/css/single-product-related.css`
-- `assets/css/single-product-tabs.css`
-- `assets/css/single-product-reviews.css`
+- `assets/css/header.css`

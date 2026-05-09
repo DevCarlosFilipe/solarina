@@ -132,14 +132,3 @@
     }
 }
 
-@keyframes sand-sunshine {
-
-    0%,
-    100% {
-        background-size: 100%;
-    }
-
-    50% {
-        background-size: 170%;
-    }
-}

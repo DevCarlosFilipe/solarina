@@ -1,0 +1,131 @@
+/* FOOTER */
+.custom-footer {
+    margin-top: 80px;
+    background-image: radial-gradient(circle at 100% -240%, #f0e0bd, #8b6346);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 120%;
+    animation: sand-sunshine 6s ease-in-out infinite;
+    color: #fff;
+}
+
+/* BENEF�CIOS */
+.footer-benefits {
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    padding: 30px 0;
+}
+
+.benefit-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+}
+
+.benefit-text {
+    font-weight: 600;
+}
+
+/* MAIN */
+.footer-main {
+    padding: 60px 0;
+}
+
+/* T�TULOS */
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+/* TEXTO */
+.footer-text {
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.8;
+}
+
+/* LINKS */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links li,
+.footer-links a {
+    color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* PAGAMENTOS */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.payment-methods span {
+    background: rgba(255, 255, 255, .08);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: .9rem;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    padding: 20px 0;
+}
+
+/* WRAPPER */
+.footer-bottom-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* COPY */
+.footer-copy,
+.footer-legal {
+    color: rgba(255, 255, 255, .6);
+    font-size: .9rem;
+}
+
+.benefit-icon i {
+    font-size: 1.8rem;
+}
+
+.payment-methods i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .footer-main {
+        padding: 40px 0;
+    }
+
+    .benefit-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+}

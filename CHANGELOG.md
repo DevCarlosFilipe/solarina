@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.1] - 2026-05-09
+### Added
+- Separado o estilo de `Minha Conta` do mobile do desktop em `assets/css/header.css`.
+
+### Changed
+- Ajustado o `mobile-header` para respeitar largura total e não provocar overflow na tela inicial.
+- Em `assets/css/header.css`, o mobile header agora usa `position: relative` e `box-sizing: border-box` para melhorar o comportamento no front page.
+- Atualizada a versão do tema para `1.1.1` em `style.css`.
+
+### Fixed
+- Corrigido o layout do header móvel na página inicial para evitar que ele fique maior que a tela ou cause rolagem horizontal.
+
 ## [1.1.0] - 2026-05-09
 ### Added
 - Criado CSS exclusivo para o template de produto `woocommerce/single-product/summary.php` em `assets/css/single-product-summary.css`.
