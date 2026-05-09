@@ -5,6 +5,19 @@ if (!class_exists('WooCommerce')) return;
 // Remove estilos padrão
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
+// Use o template do tema em woocommerce/single-product.php para single product
+function solarina_single_product_template($template)
+{
+    if (is_singular('product')) {
+        $custom_template = locate_template('woocommerce/single-product.php');
+        if ($custom_template) {
+            return $custom_template;
+        }
+    }
+    return $template;
+}
+add_filter('single_template', 'solarina_single_product_template');
+
 // Wrapper
 function solarina_wrapper_start() {
     echo '<div class="container py-5">';
@@ -25,21 +38,6 @@ function solarina_loop_columns() {
     return 3;
 }
 add_filter('loop_shop_columns', 'solarina_loop_columns');
-
-// Cart AJAX (CORRIGIDO)
-add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
-
-    ob_start();
-    ?>
-    <span class="cart-count">
-        <?php echo WC()->cart ? WC()->cart->get_cart_contents_count() : 0; ?>
-    </span>
-    <?php
-
-    $fragments['.cart-count'] = ob_get_clean();
-
-    return $fragments;
-});
 
 // Admin notice
 function solarina_admin_notice_missing_woocommerce() {
@@ -79,3 +77,9 @@ add_action('pre_get_posts', function ($query) {
     }
 
 });
+
+remove_action(
+    'woocommerce_before_single_product_summary',
+    'woocommerce_show_product_images',
+    20
+);

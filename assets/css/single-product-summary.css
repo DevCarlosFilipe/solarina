@@ -1,0 +1,203 @@
+.custom-summary-wrapper {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.product-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #198754;
+}
+
+.old-price {
+    font-size: 1rem;
+}
+
+.discount-badge {
+    display: inline-block;
+
+    background: #198754;
+    color: #fff;
+
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.installments-box,
+.shipping-box {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.purchase-box {
+    background: #fff;
+    border-radius: 16px;
+}
+
+.purchase-box .single_add_to_cart_button {
+    width: 100%;
+    height: 56px;
+
+    border-radius: 12px !important;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    background: #0d6efd !important;
+    border: none !important;
+
+    transition: .2s ease;
+}
+
+.purchase-box .single_add_to_cart_button:hover {
+    transform: translateY(-2px);
+}
+
+.product-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.benefit-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.product-meta-wrapper {
+    font-size: .9rem;
+    color: #777;
+}
+
+.purchase-box {
+    background: #fff;
+
+    border: 1px solid #eee;
+    border-radius: 16px;
+
+    padding: 24px;
+}
+
+/* ESTOQUE */
+.in-stock {
+    color: #198754;
+    font-weight: 600;
+}
+
+.out-stock {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* QUANTIDADE */
+.quantity-wrapper .qty {
+    width: 100px;
+    height: 48px;
+
+    border-radius: 10px;
+    border: 1px solid #ddd;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+}
+
+/* BOTÕES */
+.purchase-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* BOTÃO CARRINHO */
+.custom-cart-btn {
+    width: 100%;
+    height: 56px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #3483fa;
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: .2s ease;
+}
+
+.custom-cart-btn:hover {
+    transform: translateY(-2px);
+    background: #2968c8;
+}
+
+/* BOTÃO COMPRAR */
+.buy-now-btn {
+    width: 100%;
+    height: 56px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #00a650;
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+.buy-now-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* BENEFÍCIOS */
+.purchase-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.benefit-line {
+    font-size: .95rem;
+    color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .purchase-box {
+        padding: 18px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .custom-summary-wrapper {
+        padding: 20px;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .product-price {
+        font-size: 2rem;
+    }
+
+}

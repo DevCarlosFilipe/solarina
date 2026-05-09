@@ -1,34 +1,33 @@
-# Solarina Release 1.0.0
+# Solarina Release 1.1.0
 
 ## Resumo do lançamento
 
-Este release finaliza a evolução do tema Solarina até a versão `1.0.0`, com foco em acabamento visual, performance e integração sólida com o WooCommerce.
+Este release atualiza o tema Solarina para a versão `1.1.0`, com foco na organização dos estilos de produto e no carregamento condicional de CSS específico para templates do WooCommerce.
 
 ## O que foi entregue
 
-- `page-top-backdrop` com degradê laranja nas páginas sem background, garantindo um topo visual mais suave e alinhado ao menu fixo.
-- Integração do avatar do usuário logado no cabeçalho desktop, trazendo consistência com o menu mobile.
-- Página de busca (`search`) redesenhada com cards responsivos e estilo condizente com o tema.
-- Carregamento condicional de CSS por página, reduzindo o peso na home e acelerando o carregamento inicial.
-- Ajustes no `header.css` para remover a troca de logo branca no menu mobile e manter somente o logo padrão.
-- Seção Instagram (`follow`) corrigida para renderizar o shortcode do plugin corretamente quando disponível.
-- Atualização da versão do tema para `0.5.6`.
+- Criado CSS dedicado para `woocommerce/single-product/summary.php` em `assets/css/single-product-summary.css`.
+- Criado CSS dedicado para a galeria de produto em `assets/css/single-product-gallery.css`.
+- Criado CSS dedicado para produtos relacionados em `assets/css/single-product-related.css`.
+- Criado CSS dedicado para abas do produto em `assets/css/single-product-tabs.css`.
+- Criado CSS dedicado para reviews do produto em `assets/css/single-product-reviews.css`.
+- Atualizado `inc/enqueue.php` para registrar e carregar estes assets somente em páginas de produto.
+- Atualizada a versão do tema para `1.1.0` em `style.css`.
 
 ## Notas de release
 
-- A home agora carrega somente os estilos necessários, sem assets de busca, conta ou erro quando não são usados.
-- O cabeçalho fixo recebeu uma transição visual mais agradável com o degradê de topo.
-- O tema está preparado para o uso comum de lojas WooCommerce de moda praia.
-- Documentação básica atualizada em `README.md`.
+- A organização de estilos do tema agora está mais granular, com assets específicos para cada parte do template de produto.
+- A performance do carregamento de páginas de produto melhora ao somente carregar os CSS necessários.
+- O release serve como base para futuras personalizações de templates WooCommerce sem misturar estilos globais.
 
 ## Arquivos atualizados nessa versão
 
 - `style.css`
-- `README.md`
 - `CHANGELOG.md`
+- `RELEASE.md`
 - `inc/enqueue.php`
-- `assets/css/search.css`
-- `assets/css/header.css`
-- `template/sections/follow.php`
-- `template/header/site-header.php`
-- `template/header/header-icons.php`
+- `assets/css/single-product-summary.css`
+- `assets/css/single-product-gallery.css`
+- `assets/css/single-product-related.css`
+- `assets/css/single-product-tabs.css`
+- `assets/css/single-product-reviews.css`

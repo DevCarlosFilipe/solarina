@@ -1,0 +1,105 @@
+.zoom-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumb-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.thumb-container.active {
+    border-color: #0d6efd;
+}
+
+.modal-img {
+    width: 100%;
+    height: 80vh;
+    object-fit: contain;
+}
+
+.single-product-gallery {
+    background: #ffffff;
+    border: 1px solid rgba(168, 92, 44, 0.16);
+    border-radius: 30px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-product-gallery .woocommerce-product-gallery {
+    width: 100%;
+    max-width: 780px;
+}
+
+.single-product-gallery .woocommerce-product-gallery__image,
+.single-product-gallery .woocommerce-product-gallery__wrapper {
+    border-radius: 24px;
+    overflow: hidden;
+    min-height: 460px;
+    max-height: 660px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-product-gallery .woocommerce-product-gallery__image img,
+.single-product-gallery .woocommerce-product-gallery__wrapper img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.single-product-gallery .onsale {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 10;
+    padding: 0.55rem 1rem;
+    background: #a85c2c;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.col-thumb { 
+    width: 100px;
+}
+
+.grid-thumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.custom-gallery {
+    overflow: hidden;
+    box-sizing: border-box;
+}

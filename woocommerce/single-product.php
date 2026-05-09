@@ -24,11 +24,11 @@ global $product;
 
             <div id="product-<?php the_ID(); ?>" <?php wc_product_class('single-product-grid', $product); ?>>
                 <div class="single-product-gallery">
-                    <?php do_action('woocommerce_before_single_product_summary'); ?>
+                    <?php get_template_part('woocommerce/single-product/gallery'); ?>
                 </div>
 
                 <div class="single-product-summary">
-                    <?php do_action('woocommerce_single_product_summary'); ?>
+                    <?php get_template_part('woocommerce/single-product/summary'); ?>
                 </div>
             </div>
 

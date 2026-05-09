@@ -109,7 +109,7 @@ function solarina_enqueue_assets()
         );
     }
 
-    if ((function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag())) {
+    if ((function_exists('is_shop') && is_shop()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag())) {
         wp_enqueue_style(
             'solarina-products',
             get_template_directory_uri() . '/assets/css/products.css',
@@ -131,6 +131,66 @@ function solarina_enqueue_assets()
             get_template_directory_uri() . '/assets/css/woocommerce-pagination.css',
             ['solarina-woocommerce'],
             solarina_get_asset_version('/assets/css/woocommerce-pagination.css')
+        );
+    }
+
+    if (function_exists('is_product') && is_product()) {
+        wp_enqueue_style(
+            'solarina-single-product',
+            get_template_directory_uri() . '/assets/css/single-product.css',
+            ['solarina-style', 'solarina-woocommerce'],
+            solarina_get_asset_version('/assets/css/single-product.css')
+        );
+
+        wp_enqueue_style(
+            'solarina-single-product-gallery',
+            get_template_directory_uri() . '/assets/css/single-product-gallery.css',
+            ['solarina-single-product'],
+            solarina_get_asset_version('/assets/css/single-product-gallery.css')
+        );
+
+        wp_enqueue_style(
+            'solarina-single-product-related',
+            get_template_directory_uri() . '/assets/css/single-product-related.css',
+            ['solarina-single-product'],
+            solarina_get_asset_version('/assets/css/single-product-related.css')
+        );
+
+        wp_enqueue_style(
+            'solarina-single-product-tabs',
+            get_template_directory_uri() . '/assets/css/single-product-tabs.css',
+            ['solarina-single-product'],
+            solarina_get_asset_version('/assets/css/single-product-tabs.css')
+        );
+
+        wp_enqueue_style(
+            'solarina-single-product-reviews',
+            get_template_directory_uri() . '/assets/css/single-product-reviews.css',
+            ['solarina-single-product'],
+            solarina_get_asset_version('/assets/css/single-product-reviews.css')
+        );
+
+        wp_enqueue_style(
+            'solarina-single-product-summary',
+            get_template_directory_uri() . '/assets/css/single-product-summary.css',
+            ['solarina-single-product'],
+            solarina_get_asset_version('/assets/css/single-product-summary.css')
+        );
+
+        wp_enqueue_script(
+            'bootstrap-js',
+            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
+            [],
+            '5.3.2',
+            true
+        );
+
+        wp_enqueue_script(
+            'solarina-single-product',
+            get_template_directory_uri() . '/assets/js/single-product.js',
+            ['bootstrap-js'],
+            solarina_get_asset_version('/assets/js/single-product.js'),
+            true
         );
     }
 

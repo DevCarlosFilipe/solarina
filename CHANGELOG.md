@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.0] - 2026-05-09
+### Added
+- Criado CSS exclusivo para o template de produto `woocommerce/single-product/summary.php` em `assets/css/single-product-summary.css`.
+- Criado CSS exclusivo para o template de galeria de produto em `assets/css/single-product-gallery.css`.
+- Criado CSS exclusivo para o template de produtos relacionados em `assets/css/single-product-related.css`.
+- Criado CSS exclusivo para o template de abas do produto em `assets/css/single-product-tabs.css`.
+- Criado CSS exclusivo para o template de reviews do produto em `assets/css/single-product-reviews.css`.
+
+### Changed
+- Atualizado o carregamento condicional em `inc/enqueue.php` para registrar os novos assets específicos de single product.
+- Atualizada a versão do tema para `1.1.0` em `style.css`.
+
+### Fixed
+- Estrutura de assets WooCommerce organizada com arquivos CSS dedicados por template.
+
 ## [1.0.0] - 2026-04-18
 ### Added
 - Adicionado `page-top-backdrop` com degradê laranja nas páginas sem background completo, empurrando o conteúdo para baixo do menu fixo.
