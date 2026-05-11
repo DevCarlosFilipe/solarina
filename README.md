@@ -4,8 +4,8 @@ Solarina é um tema WordPress premium para lojas WooCommerce de moda praia e ver
 
 ## Versão atual
 
-- `1.0.0`
-- Lançamento focado em performance, experiência de usuário e continuidade de design.
+- `1.2.0`
+- Lançamento focado em checkout WooCommerce dedicado, avisos estilizados e carregamento condicional de assets para maior performance.
 
 ## Principais recursos
 
@@ -27,20 +27,21 @@ Solarina é um tema WordPress premium para lojas WooCommerce de moda praia e ver
 4. Instale o plugin de Instagram compatível se quiser usar a seção `Follow`.
 5. Configure o Customizer e o menu de navegação conforme a identidade da marca.
 
-## Como atualizar para a versão 0.5.6
+## Como atualizar para a versão 1.2.0
 
-- Atualize `style.css` para `0.5.6`.
-- Verifique o `CHANGELOG.md` para ver o histórico das alterações.
-- Certifique-se de que os plugins necessários estejam ativos: WooCommerce e plugin de Instagram.
+- Atualize `style.css` para `1.2.0`.
+- Verifique o `CHANGELOG.md` para o histórico completo de alterações.
+- Certifique-se de que o plugin WooCommerce esteja ativo e revise as novas dependências de layout do checkout caso use personalizações adicionais.
 
-## O que mudou no release `0.5.6`
+## O que mudou no release `1.2.0`
 
-- Adicionado `page-top-backdrop` com degradê laranja nas páginas sem background, garantindo melhor transição visual abaixo do menu fixo.
-- Avatar do usuário logado exibido no cabeçalho desktop, igual ao menu mobile.
-- Página de busca (`search`) redesenhada com cards responsivos e estilo do tema.
-- Carregamento de CSS separado por página: `search.css`, `account.css`, `woocommerce.css`, `products.css` e outros apenas quando necessário.
-- Ajuste no `header.css` para remover troca de logo branca no menu mobile e manter consistência.
-- Fix na seção Instagram (`follow`) usando `shortcode_exists()` para garantir que o shortcode seja executado quando disponível.
+- Adicionado `assets/css/form-checkout.css` para estilo dedicado do checkout WooCommerce.
+- Adicionado `assets/js/checkout.js` com comportamento exclusivo para cupom e feedback visual de carregamento.
+- Adicionado `assets/css/notices.css` para estilizar mensagens e avisos do WooCommerce.
+- Atualizado `inc/enqueue.php` para carregar os arquivos de checkout e notices apenas quando necessário.
+- Corrigido carregamento do script de checkout definindo `jquery` como dependência correta.
+- Ajustado `assets/js/header.js` para inicialização segura após o DOM carregar, eliminando erro `ReferenceError: header is not defined`.
+- Atualizada a versão do tema para `1.2.0` em `style.css`.
 
 ## Estrutura do tema
 

@@ -1,25 +1,34 @@
-# Solarina Release 1.1.1
+# Solarina Release 1.2.0
 
 ## Resumo do lançamento
 
-Este release atualiza o tema Solarina para a versão `1.1.1`, com foco em ajustes do header móvel e correções de layout na tela inicial.
+Este release atualiza o tema Solarina para a versão `1.2.0`, com foco em experiência de checkout WooCommerce, aviso de mensagens e carregamento condicional de assets.
 
 ## O que foi entregue
 
-- Separado o estilo de `Minha Conta` do mobile do desktop em `assets/css/header.css`.
-- Ajustado o `mobile-header` para respeitar largura total e não causar overflow na página inicial.
-- Corrigido o comportamento do mobile header na home, mantendo o layout estável e sem rolagem horizontal indesejada.
-- Atualizada a versão do tema para `1.1.1` em `style.css`.
+- Adicionado CSS exclusivo para checkout: `assets/css/form-checkout.css`.
+- Adicionado JS exclusivo para o checkout: `assets/js/checkout.js`.
+- Adicionado estilo dedicado para avisos (`notices`) em `assets/css/notices.css`.
+- Atualizado `inc/enqueue.php` para carregar assets de checkout apenas em páginas de checkout, melhorando performance.
+- Corrigido carregamento do script de checkout usando `jquery` como dependência para evitar falhas de execução.
+- Ajustado `assets/js/header.js` para inicialização segura após DOM estar pronto.
+- Atualizada a versão do tema para `1.2.0`.
 
 ## Notas de release
 
-- O mobile header agora funciona corretamente na tela inicial, sem exceder a largura do dispositivo.
-- O botão `Minha Conta` no mobile agora tem estilo isolado, sem afetar a versão desktop.
-- A base do release anterior de estilos de WooCommerce permanece intacta.
+- O checkout agora possui arquivos CSS e JS dedicados, garantindo estilo e comportamento exclusivos sem poluir o restante do tema.
+- Mensagens e avisos do WooCommerce recebem estilo próprio em `notices.css`, melhorando a consistência visual.
+- Carregamento condicional de assets reduz o tempo de carregamento em páginas que não são checkout.
+- O header do tema ficou mais estável, com inicialização JavaScript mais segura.
 
 ## Arquivos atualizados nessa versão
 
 - `style.css`
+- `README.md`
 - `CHANGELOG.md`
 - `RELEASE.md`
-- `assets/css/header.css`
+- `inc/enqueue.php`
+- `assets/css/form-checkout.css`
+- `assets/css/notices.css`
+- `assets/js/checkout.js`
+- `assets/js/header.js`

@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0] - 2026-05-10
+### Added
+- Adicionado CSS exclusivo para checkout em `assets/css/form-checkout.css`.
+- Adicionado JS exclusivo para checkout em `assets/js/checkout.js`, incluindo estado de carregamento e comportamento de cupom.
+- Adicionado estilo dedicado para avisos em `assets/css/notices.css`.
+
+### Changed
+- Atualizado `inc/enqueue.php` para carregar assets de checkout e notices apenas nas páginas necessárias.
+- Atualizada a versão do tema para `1.2.0` em `style.css`.
+
+### Fixed
+- Corrigido o carregamento do script de checkout para depender de `jquery` e evitar falhas no front-end.
+- Ajustado `assets/js/header.js` para inicialização segura após DOM estar pronto, eliminando `ReferenceError: header is not defined`.
+
 ## [1.1.1] - 2026-05-09
 ### Added
 - Separado o estilo de `Minha Conta` do mobile do desktop em `assets/css/header.css`.
