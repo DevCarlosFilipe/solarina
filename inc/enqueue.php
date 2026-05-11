@@ -139,6 +139,13 @@ function solarina_enqueue_assets()
             ['solarina-woocommerce'],
             solarina_get_asset_version('/assets/css/woocommerce-pagination.css')
         );
+
+        wp_enqueue_style(
+            'solarina-notices',
+            get_template_directory_uri() . '/assets/css/notices.css',
+            ['solarina-woocommerce'],
+            solarina_get_asset_version('/assets/css/notices.css')
+        );
     }
 
     if (function_exists('is_checkout') && is_checkout()) {

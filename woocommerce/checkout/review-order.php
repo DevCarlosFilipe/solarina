@@ -130,11 +130,4 @@ defined('ABSPATH') || exit;
 
     </div>
 
-    <!-- PAGAMENTO -->
-    <div class="checkout-payment-wrapper">
-
-        <?php woocommerce_checkout_payment(); ?>
-
-    </div>
-
 </div>

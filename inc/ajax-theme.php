@@ -148,3 +148,53 @@ add_filter(
         return $fragments;
     }
 );
+
+add_action(
+    'wp_ajax_save_checkout_billing',
+    'custom_save_checkout_billing'
+);
+
+add_action(
+    'wp_ajax_nopriv_save_checkout_billing',
+    'custom_save_checkout_billing'
+);
+
+function custom_save_checkout_billing()
+{
+    check_ajax_referer(
+        'custom_coupon_nonce',
+        'security'
+    );
+
+    parse_str(
+        $_POST['form_data'],
+        $data
+    );
+
+    foreach ($data as $key => $value) {
+
+        if (
+            strpos($key, 'billing_') === 0
+        ) {
+
+            WC()->session->set(
+                $key,
+                sanitize_text_field($value)
+            );
+
+            // usuário logado
+            if (is_user_logged_in()) {
+
+                update_user_meta(
+                    get_current_user_id(),
+                    $key,
+                    sanitize_text_field($value)
+                );
+            }
+        }
+    }
+
+    wp_send_json([
+        'success' => true
+    ]);
+}

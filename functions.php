@@ -23,3 +23,6 @@ require_once get_template_directory() . '/inc/theme-update.php';
 
 // AJAX
 require_once get_template_directory() . '/inc/ajax-theme.php';
+
+// CEP
+require_once get_template_directory() . '/inc/viacep.php';

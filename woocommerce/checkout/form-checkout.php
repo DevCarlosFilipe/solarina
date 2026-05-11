@@ -24,6 +24,12 @@ if (
 
     return;
 }
+
+// billing salvo
+$has_saved_billing =
+    !empty($checkout->get_value(
+        'billing_first_name'
+    ));
 ?>
 
 <div class="container">
@@ -46,21 +52,140 @@ if (
         <!-- ESQUERDA -->
         <div class="col-lg-8">
 
-            <form name="checkout"
+            <form
+                name="checkout"
                 method="post"
                 class="checkout woocommerce-checkout premium-checkout"
                 action="<?php echo esc_url(wc_get_checkout_url()); ?>"
                 enctype="multipart/form-data">
 
                 <!-- CLIENTE -->
-                <div class="checkout-card mb-4">
+                <div class="checkout-card mb-4 billing-card">
 
-                    <div class="checkout-card-header">
-                        <h2>Informações pessoais</h2>
+                    <!-- HEADER -->
+                    <div class="checkout-card-header billing-card-header">
+
+                        <h2>
+                            Informações pessoais
+                        </h2>
+
                     </div>
 
-                    <div class="checkout-card-body">
-                        <?php do_action('woocommerce_checkout_billing'); ?>
+                    <!-- RESUMO -->
+                    <div
+                        class="billing-summary"
+                        style="<?php echo $has_saved_billing ? '' : 'display:none;'; ?>">
+
+                        <div class="billing-summary-content">
+
+                            <?php if ($has_saved_billing) : ?>
+
+                                <strong>
+                                    <?php
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_first_name'
+                                        )
+                                    );
+
+                                    echo ' ';
+
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_last_name'
+                                        )
+                                    );
+                                    ?>
+                                </strong>
+
+                                <span>
+                                    <?php
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_address_1'
+                                        )
+                                    );
+                                    ?>
+                                </span>
+
+                                <span>
+                                    <?php
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_city'
+                                        )
+                                    );
+
+                                    echo ' - ';
+
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_state'
+                                        )
+                                    );
+                                    ?>
+                                </span>
+
+                                <span>
+                                    CEP:
+                                    <?php
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_postcode'
+                                        )
+                                    );
+                                    ?>
+                                </span>
+
+                                <span>
+                                    <?php
+                                    echo esc_html(
+                                        $checkout->get_value(
+                                            'billing_phone'
+                                        )
+                                    );
+                                    ?>
+                                </span>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                        <!-- EDITAR -->
+                        <button
+                            type="button"
+                            class="edit-billing-button">
+
+                            Editar
+
+                        </button>
+
+                    </div>
+
+                    <!-- BODY -->
+                    <div
+                        class="checkout-card-body billing-card-body"
+                        style="<?php echo $has_saved_billing ? 'display:none;' : ''; ?>">
+
+                        <?php
+                        do_action(
+                            'woocommerce_checkout_billing'
+                        );
+                        ?>
+
+                        <!-- ACTIONS -->
+                        <div class="billing-actions">
+
+                            <button
+                                type="button"
+                                class="save-billing-button">
+
+                                Continuar
+
+                            </button>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -69,15 +194,45 @@ if (
                 <div class="checkout-card">
 
                     <div class="checkout-card-header">
-                        <h2>Entrega</h2>
+
+                        <h2>
+                            Entrega
+                        </h2>
+
                     </div>
 
                     <div class="checkout-card-body">
-                        <?php do_action('woocommerce_checkout_shipping'); ?>
+
+                        <?php
+                        do_action(
+                            'woocommerce_checkout_shipping'
+                        );
+                        ?>
+
+                    </div>
+
+                </div>
+
+                <!-- PAGAMENTO -->
+                <div class="checkout-card payment-card mt-4">
+
+                    <!-- HEADER -->
+                    <div class="checkout-card-header">
+                        <h2>Pagamento</h2>
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="checkout-card-body payment-card-body">
+
+                        <?php
+                        woocommerce_checkout_payment();
+                        ?>
+
                     </div>
 
                 </div>
             </form>
+
         </div>
 
         <!-- DIREITA -->
@@ -89,12 +244,20 @@ if (
                 <div class="checkout-card sticky-checkout">
 
                     <div class="checkout-card-header">
-                        <h2>Resumo do pedido</h2>
+
+                        <h2>
+                            Resumo do pedido
+                        </h2>
+
                     </div>
 
                     <div class="checkout-card-body">
 
-                        <?php do_action('woocommerce_checkout_order_review'); ?>
+                        <?php
+                        do_action(
+                            'woocommerce_checkout_order_review'
+                        );
+                        ?>
 
                     </div>
 
@@ -108,4 +271,9 @@ if (
 
 </div>
 
-<?php do_action('woocommerce_after_checkout_form', $checkout); ?>
+<?php
+do_action(
+    'woocommerce_after_checkout_form',
+    $checkout
+);
+?>
