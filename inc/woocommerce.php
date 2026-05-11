@@ -83,3 +83,32 @@ remove_action(
     'woocommerce_show_product_images',
     20
 );
+
+add_action('template_redirect', function () {
+
+    if (isset($_POST['buy_now'])) {
+
+        $product_id = absint($_POST['buy_now']);
+
+        $quantity = isset($_POST['quantity'])
+            ? wc_stock_amount($_POST['quantity'])
+            : 1;
+
+        // Limpa carrinho
+        WC()->cart->empty_cart();
+
+        // Adiciona produto
+        WC()->cart->add_to_cart(
+            $product_id,
+            $quantity
+        );
+
+        // Vai checkout
+        wp_safe_redirect(
+            wc_get_checkout_url()
+        );
+
+        exit;
+    }
+
+});

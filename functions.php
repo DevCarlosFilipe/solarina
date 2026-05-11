@@ -20,3 +20,6 @@ require_once get_template_directory() . '/inc/tgm.php';
 
 // Atualização automática do tema
 require_once get_template_directory() . '/inc/theme-update.php';
+
+// AJAX
+require_once get_template_directory() . '/inc/ajax-theme.php';

@@ -125,7 +125,7 @@ function solarina_enqueue_assets()
         );
     }
 
-    if ((function_exists('is_woocommerce') && is_woocommerce()) || (function_exists('is_account_page') && is_account_page())) {
+    if ((function_exists('is_woocommerce') && is_woocommerce()) || (function_exists('is_account_page') && is_account_page()) || (function_exists('is_checkout') && is_checkout())) {
         wp_enqueue_style(
             'solarina-woocommerce',
             get_template_directory_uri() . '/assets/css/woocommerce.css',
@@ -138,6 +138,28 @@ function solarina_enqueue_assets()
             get_template_directory_uri() . '/assets/css/woocommerce-pagination.css',
             ['solarina-woocommerce'],
             solarina_get_asset_version('/assets/css/woocommerce-pagination.css')
+        );
+    }
+
+    if (function_exists('is_checkout') && is_checkout()) {
+        remove_action(
+            'woocommerce_before_checkout_form',
+            'woocommerce_checkout_coupon_form',
+            10
+        );
+        wp_enqueue_style(
+            'solarina-checkout-form',
+            get_template_directory_uri() . '/assets/css/form-checkout.css',
+            ['solarina-style'],
+            solarina_get_asset_version('/assets/css/form-checkout.css')
+        );
+
+        wp_enqueue_script(
+            'solarina-checkout-script',
+            get_template_directory_uri() . '/assets/js/checkout.js',
+            ['jquery'],
+            solarina_get_asset_version('/assets/js/checkout.js'),
+            true
         );
     }
 

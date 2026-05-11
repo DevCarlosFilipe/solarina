@@ -135,59 +135,71 @@ $review_count = $product->get_review_count();
 
     <div class="purchase-box">
 
-    <!-- ESTOQUE -->
-    <div class="stock-box mb-4">
+        <!-- ESTOQUE -->
+        <div class="stock-box mb-4">
 
-        <?php if ($product->is_in_stock()) : ?>
+            <?php if ($product->is_in_stock()) : ?>
 
-            <div class="in-stock">
-                ✔ Em estoque
+                <div class="in-stock">
+                    ✔ Em estoque
+                </div>
+
+            <?php else : ?>
+
+                <div class="out-stock">
+                    ✖ Fora de estoque
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+        <!-- FORM -->
+        <form class="cart"
+            method="post"
+            enctype="multipart/form-data">
+
+            <!-- QUANTIDADE -->
+            <div class="quantity-wrapper mb-4">
+
+                <label class="quantity-label mb-2">
+                    Quantidade:
+                </label>
+
+                <?php
+                woocommerce_quantity_input([
+                    'min_value' => 1,
+                    'max_value' => $product->get_max_purchase_quantity(),
+                    'input_value' => 1,
+                ]);
+                ?>
+
             </div>
 
-        <?php else : ?>
+            <!-- BOTÕES -->
+            <div class="purchase-buttons">
 
-            <div class="out-stock">
-                ✖ Fora de estoque
+                <!-- ADD CART -->
+                <button type="submit"
+                    name="add-to-cart"
+                    value="<?php echo esc_attr($product->get_id()); ?>"
+                    class="single_add_to_cart_button custom-cart-btn">
+                    Adicionar ao carrinho
+                </button>
+
+                <!-- BUY NOW -->
+                <button type="submit"
+                    name="buy_now"
+                    value="<?php echo esc_attr($product->get_id()); ?>"
+                    class="buy-now-btn">
+                    Comprar agora
+                </button>
+
             </div>
 
-        <?php endif; ?>
+        </form>
 
     </div>
-
-    <!-- QUANTIDADE -->
-    <div class="quantity-wrapper mb-4">
-
-        <label class="quantity-label mb-2">
-            Quantidade:
-        </label>
-
-        <?php woocommerce_quantity_input(); ?>
-
-    </div>
-
-    <!-- BOTÕES -->
-    <div class="purchase-buttons">
-
-        <!-- ADD CARRINHO -->
-        <button type="submit"
-                name="add-to-cart"
-                value="<?php echo esc_attr($product->get_id()); ?>"
-                class="single_add_to_cart_button custom-cart-btn">
-
-            Adicionar ao carrinho
-
-        </button>
-
-        <!-- COMPRAR AGORA -->
-        <button class="buy-now-btn">
-
-            Comprar agora
-
-        </button>
-
-    </div>
-
-</div>
 
     <!-- META -->
     <div class="product-meta-wrapper mt-4">

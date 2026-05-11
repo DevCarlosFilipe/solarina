@@ -1,0 +1,150 @@
+<?php
+
+add_action(
+    'wp_ajax_validate_coupon',
+    'custom_validate_coupon'
+);
+
+add_action(
+    'wp_ajax_nopriv_validate_coupon',
+    'custom_validate_coupon'
+);
+
+function custom_validate_coupon()
+{
+    // segurança
+    check_ajax_referer(
+        'custom_coupon_nonce',
+        'security'
+    );
+
+    // cupom
+    $coupon_code = isset($_POST['coupon_code'])
+        ? wc_format_coupon_code(
+            wp_unslash($_POST['coupon_code'])
+        ) : '';
+
+    // vazio
+    if (empty($coupon_code)) {
+
+        wp_send_json([
+            'success' => false,
+            'message' => 'Digite um cupom.'
+        ]);
+    }
+
+    // aplica desconto
+    $applied = WC()->cart->apply_coupon(
+        $coupon_code
+    );
+
+    // erro
+    if (is_wp_error($applied)) {
+
+        wp_send_json([
+            'success' => false,
+            'message' => $applied->get_error_message()
+        ]);
+    }
+
+    // cupom inválido
+    if (!$applied) {
+
+        wp_send_json([
+            'success' => false,
+            'message' => 'Cupom inválido.'
+        ]);
+    }
+
+    // recalcula
+    WC()->cart->calculate_totals();
+
+    // sucesso
+    wp_send_json([
+        'success' => true,
+        'message' => 'Cupom aplicado com sucesso.'
+    ]);
+}
+
+add_action(
+    'wp_enqueue_scripts',
+    function () {
+
+        wp_localize_script(
+            'solarina-checkout-script',
+            'custom_coupon',
+            [
+                'ajax_url' => admin_url(
+                    'admin-ajax.php'
+                ),
+
+                'nonce' => wp_create_nonce(
+                    'custom_coupon_nonce'
+                )
+            ]
+        );
+    }
+);
+
+
+// Removendo cupom de desconto
+
+add_action(
+    'wp_ajax_remove_coupon_custom',
+    'custom_remove_coupon'
+);
+
+add_action(
+    'wp_ajax_nopriv_remove_coupon_custom',
+    'custom_remove_coupon'
+);
+
+function custom_remove_coupon()
+{
+    check_ajax_referer(
+        'custom_coupon_nonce',
+        'security'
+    );
+
+    $coupon_code = isset($_POST['coupon_code'])
+        ? wc_format_coupon_code(
+            wp_unslash($_POST['coupon_code'])
+        )
+        : '';
+
+    if (empty($coupon_code)) {
+
+        wp_send_json([
+            'success' => false,
+            'message' => 'Cupom inválido.'
+        ]);
+    }
+
+    WC()->cart->remove_coupon(
+        $coupon_code
+    );
+
+    WC()->cart->calculate_totals();
+
+    wp_send_json([
+        'success' => true,
+        'message' => 'Cupom removido.'
+    ]);
+}
+
+add_filter(
+    'woocommerce_update_order_review_fragments',
+    function ($fragments) {
+
+        ob_start();
+
+        wc_get_template(
+            'checkout/review-order.php'
+        );
+
+        $fragments['.premium-review-order'] =
+            ob_get_clean();
+
+        return $fragments;
+    }
+);

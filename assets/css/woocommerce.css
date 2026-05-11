@@ -254,11 +254,6 @@
     pointer-events: none;
 }
 
-.shop-hero .container {
-    position: relative;
-    z-index: 1;
-}
-
 .shop-hero .section-title {
     margin-bottom: 1rem;
 }
