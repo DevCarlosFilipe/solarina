@@ -148,6 +148,16 @@ function solarina_enqueue_assets()
         );
     }
 
+    if (function_exists('is_cart') && is_cart()) {
+
+        wp_enqueue_style(
+            'solarina-cart',
+            get_template_directory_uri() . '/assets/css/cart.css',
+            [],
+            '1.0'
+        );
+    }
+
     if (function_exists('is_checkout') && is_checkout()) {
         remove_action(
             'woocommerce_before_checkout_form',

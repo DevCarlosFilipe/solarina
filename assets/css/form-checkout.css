@@ -854,6 +854,7 @@
     max-width: 980px;
     margin: 0 auto;
     padding: 80px 20px;
+    padding-top: 0;
 }
 
 .premium-thankyou-header {
@@ -1010,4 +1011,132 @@
     .premium-thankyou-product {
         align-items: flex-start;
     }
+}
+
+
+.premium-order-pay-wrapper{
+    max-width:760px;
+    margin:0 auto;
+}
+
+.premium-order-pay-header{
+    margin-bottom:32px;
+}
+
+.premium-order-pay-title{
+    margin:0 0 10px;
+    font-size:2rem;
+    font-weight:700;
+    color:#111;
+}
+
+.premium-order-pay-subtitle{
+    color:#666;
+    line-height:1.7;
+}
+
+.premium-order-pay-card{
+    padding:24px;
+    margin-bottom:20px;
+    border:1px solid #ececec;
+    border-radius:24px;
+    background:#fff;
+}
+
+.premium-order-pay-card-header{
+    margin-bottom:20px;
+}
+
+.premium-order-pay-card-header h2{
+    margin:0;
+    font-size:1.05rem;
+    font-weight:600;
+    color:#111;
+}
+
+.premium-order-pay-total{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.premium-order-pay-total span{
+    color:#666;
+}
+
+.premium-order-pay-total strong{
+    font-size:1.25rem;
+    font-weight:700;
+    color:#111;
+}
+
+.premium-order-pay-products{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.premium-order-pay-product{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.premium-order-pay-thumb img{
+    width:72px;
+    height:72px;
+    border-radius:16px;
+    object-fit:cover;
+}
+
+.premium-order-pay-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.premium-order-pay-content strong{
+    font-size:.95rem;
+    color:#111;
+}
+
+.premium-order-pay-content span{
+    font-size:.9rem;
+    color:#777;
+}
+
+.premium-order-pay-price{
+    font-weight:700;
+    color:#111;
+}
+
+.premium-order-pay-gateway img,
+.premium-order-pay-gateway canvas{
+    max-width:100%;
+    height:auto;
+}
+
+.premium-order-pay-gateway .payment_box{
+    margin:0!important;
+    padding:0!important;
+    background:transparent!important;
+}
+
+.premium-order-pay-gateway button,
+.premium-order-pay-gateway .button,
+.premium-order-pay-gateway input[type="submit"]{
+    min-height:54px;
+    border:none;
+    border-radius:16px;
+    background:#111!important;
+    color:#fff!important;
+    font-weight:600;
+    transition:.2s ease;
+}
+
+.premium-order-pay-gateway button:hover,
+.premium-order-pay-gateway .button:hover,
+.premium-order-pay-gateway input[type="submit"]:hover{
+    opacity:.92;
 }

@@ -382,3 +382,55 @@ jQuery(function ($) {
         }
     );
 });
+
+// PIX WATCHER
+if ($('body').hasClass('woocommerce-order-pay')) {
+
+    // order id
+    const orderId =
+        $('input[name="order_id"]').val();
+
+    // existe
+    if (orderId) {
+
+        // interval
+        setInterval(function () {
+
+            $.ajax({
+
+                type: 'POST',
+
+                url: custom_coupon.ajax_url,
+
+                data: {
+
+                    action:
+                        'check_order_payment_status',
+
+                    order_id:
+                        orderId
+
+                },
+
+                success: function (response) {
+
+                    // pago
+                    if (
+                        response.paid &&
+                        response.redirect
+                    ) {
+
+                        window.location.href =
+                            response.redirect;
+
+                    }
+
+                }
+
+            });
+
+        }, 3000);
+
+    }
+
+}

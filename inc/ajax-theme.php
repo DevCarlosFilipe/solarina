@@ -198,3 +198,51 @@ function custom_save_checkout_billing()
         'success' => true
     ]);
 }
+
+// Validando pagamento do pedido via AJAX
+add_action(
+    'wp_ajax_check_order_payment_status',
+    'check_order_payment_status'
+);
+
+add_action(
+    'wp_ajax_nopriv_check_order_payment_status',
+    'check_order_payment_status'
+);
+
+function check_order_payment_status()
+{
+    // pedido
+    $order_id =
+        absint($_POST['order_id']);
+
+    // order
+    $order =
+        wc_get_order($order_id);
+
+    // inválido
+    if (!$order) {
+
+        wp_send_json([
+            'paid' => false
+        ]);
+
+    }
+
+    // status
+    $paid =
+        $order->has_status([
+            'processing',
+            'completed'
+        ]);
+
+    // retorno
+    wp_send_json([
+
+        'paid' => $paid,
+
+        'redirect' =>
+            $order->get_checkout_order_received_url()
+
+    ]);
+}

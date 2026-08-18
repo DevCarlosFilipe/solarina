@@ -7,6 +7,19 @@ $order_id = absint($wp->query_vars['order-received']);
 
 $order = wc_get_order($order_id);
 
+if (
+    $order->has_status(
+        ['pending', 'on-hold']
+    )
+) {
+
+    wp_safe_redirect(
+        $order->get_checkout_payment_url()
+    );
+
+    exit;
+}
+
 if (!$order) {
     return;
 }
